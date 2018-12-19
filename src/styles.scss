@@ -1,1 +1,231 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,600i,700,700i');
+@import url('https://use.typekit.net/xzb5jtv.css');
+
+@import 'global_sass_modules/variables';
+@import 'global_sass_modules/buttons';
+@import 'global_sass_modules/typography';
+
+
+
+$white: #fff;
+$offwhite: #d9d8dd;
+$navy: #052838;
+$dark: #011216;
+$red: #DB473B;
+$hotpink: #fc30aa;
+$pink: #f85da9;
+$mint-alt: #1cf7cd;
+$mint: #30c7bc;
+$blue-alt: #238df7;
+$blue: #509CAA;
+$plum: #AA1D67;
+$coral: #FE6F61;
+$deep-blue: #044c56;
+$yellow: #ffd400;
+$purple: #004eff;
+$orange: #ffb100;
+
+// $purple: #2e17ec;
+$black: #1c1b20;
+
+$headline-color: $purple;
+$secondary-color: $pink;
+$accent-color: $coral;
+$hero-background: $orange;
+$hero-typography: $navy;
+
+$serif-font: 'Vollkorn', serif;
+$sans-serif-font: 'neuzeit-grotesk', sans-serif;;
+$headline-font: 'neuzeit-grotesk', sans-serif;
+
+$small-desktop: 1024px;
+$tablet: 768px;
+$phone: 500px;
+
+$global-offset: 30px;
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+// .content {
+// 	max-width: 85rem;
+// 	width: 90%;
+// 	margin: 0 auto;
+// 	&:after {
+// 		content:'';
+// 		display: block;
+// 		clear: both;
+// 		float: none;
+// 	}
+// } 
+::selection {
+	background: $mint;
+	color: $white;
+}
+body {
+	background: $white;
+	margin: 0;
+	font-family: $sans-serif-font;
+	color: $navy;
+	overflow-x: hidden;
+}
+a {
+	text-decoration: none;
+}
+p {
+	font-size: 14px;
+	line-height: 1.2rem;
+	font-weight: 300;
+	letter-spacing: 0.2px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+.hidden {
+	display: none !important;
+}
+
+// .button {
+// 	color: $white;
+// 	font-size: 0.8rem;
+// 	font-weight: 100;
+// 	letter-spacing: 0.5px;
+// 	padding: 0.5rem 1.5rem;
+// 	transform: scale(1.0);
+// 	display: inline-block;
+// 	border-radius: 2px;
+// 	cursor: pointer;
+// 	cursor: hand;
+// 	&:after {
+// 		content: '';
+// 		width: 0;
+// 		height: 100%;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		background: red;
+// 		z-index: -1;
+// 		transition: width 0.2s ease;
+// 	}
+// 	&:hover {
+// 		@media screen and (min-width: 1024px) {
+// 			&:after {
+// 				width: 100%;
+// 			}
+// 		}
+// 	}
+// 	&:focus {
+// 		border: 2px solid $white;
+// 	}
+// }
+// .button-mint {
+// 	background: rgba(28,247,205,0.5);
+// 	border: 2px solid $mint;
+// 	&:after {
+// 		background: $mint;
+// 	}
+// }
+// .button-blue {
+// 	background: rgba(35,141,247,0.5);
+// 	border: 2px solid $blue;
+// 	&:after {
+// 		background: $blue;
+// 	}
+// }
+
+// .button-dark {
+// 	background: rgba(5,40,56,0.8);
+// 	border: 2px solid $dark;
+// 	&:after {
+// 		background: $navy;
+// 	}
+// }
+
+
+
+@mixin transitions($time) {
+	-moz-transition: all $time ease;
+	-o-transition: all $time ease;
+	-webkit-transition: all $time ease;
+	transition: all $time ease;
+}
+
+
+//////////
+
+
+.container {
+	max-width: 1200px;
+	width: 80%;
+	@media (max-width: $below-tablet) { width: 90%; }
+	margin: auto;
+	align-self: center;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+
+

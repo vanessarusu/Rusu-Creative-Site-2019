@@ -1,0 +1,22 @@
+<section>
+	<div class="work-container">
+		<div *ngFor="let post of posts" 
+			class="card" 
+			(mouseenter) ="mouseEnter(post)" 
+			(mouseleave)="mouseLeave(post)"
+			[routerLink]="['/work',post.slug]">
+			<figure>
+				<div>
+					<img [src]="post._embedded['wp:featuredmedia']['0'].source_url">
+				</div>
+				<figcaption [@hoverTrigger]="{ value: post.hover, params: {bg: post.primaryColor}}">
+					<div>
+						<h3 [ngClass]="post.darkHeader ? 'dark' : 'light'">{{post.title.rendered}}</h3>
+						<p class="categories" [ngClass]="post.darkHeader ? 'dark' : 'light'">{{post.acf.categories}}</p>
+						<p class="subtext" [ngClass]="post.lightDescription ? 'light' : 'dark'">{{post.acf.subtext}}</p>
+					</div>
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>

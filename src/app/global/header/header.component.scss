@@ -1,0 +1,28 @@
+@import '../../../styles.scss';
+
+header {
+	width: 100%;
+	background: #fff;
+	position: relative;
+	z-index: 100;
+	ul {
+		display: flex;
+		justify-content: center;
+		li {
+			a {
+				padding: 30px;
+				display: block;
+				text-transform: uppercase;
+				letter-spacing: 3px;
+				font-size: 11px;
+				color: $black;
+				&:hover {
+					background: pink;
+				}
+			}
+		}
+	}
+}
+.fixed {
+
+}

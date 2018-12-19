@@ -1,0 +1,22 @@
+<section id="postSingle" *ngIf="currentPost">
+	<div *ngIf="customFields" id="leftHero" #sliderContainer>
+		<div 
+		*ngFor="let image of heroImages">
+			<div [innerHTML]="image.outerHTML" 
+			#sliderImage 
+			class="slider-image" 
+			[ngClass]="image.active === true ? 'active' : 'not-active'"></div>
+		</div>
+		<h1 class="super-title">{{superTitle}}</h1>
+
+	</div>
+	<div id="rightCopy">
+		<h2 [innerHTML]="currentPost.title.rendered"></h2>
+		<p class="date">{{ readableDate }} <span>by {{author}}</span></p>
+		<div [innerHTML]="currentPost.content.rendered"></div>
+	</div>
+	<div class="meta" *ngIf="supportingCallout">
+		<p>{{supportingCallout}}</p>
+		<a *ngFor="let category of categoryData">{{category.name}}, </a>		
+	</div>
+</section>

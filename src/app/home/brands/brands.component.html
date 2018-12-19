@@ -1,0 +1,11 @@
+<section>
+	<div *ngIf="page" class="container">
+		<ul>
+			<li *ngFor="let img of logos">
+				<img [src]="img.src">
+			</li>
+		</ul>
+
+	</div>
+	<p class="meta">Clients</p>
+</section>

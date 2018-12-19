@@ -1,0 +1,17 @@
+<section *ngIf="feed">
+	<div>
+		<ul class="container">
+			<li class="intro">
+				<div>
+					<h5>Hot off the Artboard</h5>
+					<p><a href="#">{{username}}</a></p>
+				</div>
+			</li>
+			<li *ngFor="let item of feed">
+				<a [href]="item.link" target="blank">
+					<img [src]="item.images.low_resolution.url">
+				</a>
+			</li>
+		</ul>
+	</div>	
+</section>

@@ -1,0 +1,51 @@
+@import '../../../styles.scss';
+
+:host ::ng-deep section {
+	ul.container {
+		width: 100%;
+		max-width: calc(100% - #{$global-offset});
+		@media (max-width: $below-tablet) { display: none; }
+		li {
+			grid-column: span 2;
+			@media (max-width: $small-desktop) { 
+				grid-column: span 3;
+				&:nth-child(1n+5) {
+					display: none;
+				}
+			}
+			&.intro {
+				background: $black;
+				color: white;
+				display: flex;
+				align-items: center;
+				text-align: center;
+				div {
+					width: 80%;
+					margin: 0 auto 0 calc(#{$global-offset} - 7px);
+				}
+				h5 {
+					font-family: $sans-serif-font;
+					flex-align: center;
+					font-size: 20px;
+					font-weight: bold;
+					line-height: 1.1;
+					letter-spacing: 1px;
+					text-transform: lowercase;
+				}
+				p {
+					padding-top: 5px;
+
+					a {
+						font-family: $serif-font;
+						font-style: italic;
+						color: pink;
+						font-size: 12px;
+					}
+				}
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}

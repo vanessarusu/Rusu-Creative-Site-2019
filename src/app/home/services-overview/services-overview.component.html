@@ -1,0 +1,32 @@
+
+<section *ngIf="threeKings">
+	<div class="container">
+		<p class="meta">{{ threeKings.acf.supporting_callout }}</p>
+		<h3>{{ threeKings.title.rendered }}</h3>
+		<object class="underline-squiggle" type="image/svg+xml" data="../assets/squiggle.svg"></object>
+
+		<div class="services" [innerHTML]="threeKings.content.rendered" [@enterAnim]="fadeIn" (@enterAnim.done)="animationDone($event)" [ngClass]="fadeIn ? 'show' : 'hide'">
+		</div>
+		<div class="cta">
+			<a href="#">get in touch</a>
+		</div>
+	</div>
+</section>
+<section id="strategy" *ngIf="specificsList">
+	<div class="specs-block" 
+		(click)="specsClick()" 
+		[ngClass]="specs ? 'open' : 'closed'">
+		<div>
+			<p class="title" [innerHTML]=specificsList.title.rendered></p>
+			<div [innerHTML]=specificsList.content.rendered></div>
+		</div>
+		<span><img src="../assets/arrow.svg"></span>
+	</div>
+
+	<div class="text-block container" *ngIf="valuesBlock">
+			<img [src]="valuesBlock._embedded['wp:featuredmedia']['0'].source_url">
+		<h3 [innerHTML]=valuesBlock.acf.supporting_callout></h3>
+		<div [innerHTML]=valuesBlock.content.rendered></div>
+		
+	</div>
+</section>

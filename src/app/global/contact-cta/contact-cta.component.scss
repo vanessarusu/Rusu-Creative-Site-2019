@@ -1,0 +1,79 @@
+@import '../../../styles.scss';
+
+section {
+	padding: 150px 30px;
+	div.copy {
+		grid-column: 1/6;
+		@media (max-width: $below-tablet) { grid-column: 1/-1; }
+		h5 {
+			font-weight: bold;
+			font-size: 22px;
+			margin-bottom: 30px;
+			text-transform: lowercase;
+		}
+		p {
+			margin-bottom: 10px;
+			&.callout {
+				font-family: $serif-font;
+				font-style: italic;
+				font-weight: bold;
+				color: $accent-color;
+			}
+			&.small {
+				color: #999;
+				font-size: 12px;
+				line-height: 1.4;
+				max-width: 80%;
+			}
+		}
+	}
+
+	div.form-container {
+		grid-column: 8/-1;
+		@media (max-width: $below-tablet) { grid-column: 1/-1; }
+		form#mc-embedded-subscribe-form {
+			padding: 0;
+			.mc-field-group {
+				width: 100%;
+			}
+			input#mce-EMAIL {
+				border: none;
+				outline: none;
+				font-size: 26px;
+				border-bottom: 3px solid rgba($black, 0.1);
+				background: transparent;
+				border-radius: 0;
+				font-family: $sans-serif-font;
+				font-weight: bold;
+				transition: all 0.2s ease;
+				text-indent: 0;
+				&:focus {
+					border-bottom: 3px solid $black;
+				}
+			}
+			input#mc-embedded-subscribe {
+				border: 1px solid $black;
+				background: transparent;
+				color: $black;
+				width: 100%;
+				margin-top: 20px;
+				height: 40px;
+				border-radius: 0;
+				font-family: $headline-font;
+				font-weight: bold;
+				letter-spacing: 0px;
+				transition: all 0.1s ease-in-out;
+				@media(min-width: $hover-breakpoint) {
+					&:hover {
+						color: white;
+						background: rgba($black, 0.9);
+					}
+				}
+				
+			}
+			::-webkit-input-placeholder {
+				color: rgba($black, 0.1);
+			}
+		}
+	}
+}

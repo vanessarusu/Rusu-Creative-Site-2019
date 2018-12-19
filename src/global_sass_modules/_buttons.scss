@@ -1,0 +1,50 @@
+@mixin button-primary($background: blue, $color: black, $hover: white) {
+	font-family: $serif-font;
+	text-transform: lowercase;
+	color: $color;
+	font-style: italic;
+	font-size: 18px;
+	position: relative;
+	padding-bottom: 5px;
+	transition: all 0.1s ease-in;
+	z-index: 0;
+	&:before {
+		position: absolute;
+		display: block;
+		height: 2px;
+		width: 120%;
+		left: -10%;
+		bottom: 0;
+		background: $background;
+		content: '';
+		transition: all 0.2s ease-out;
+		z-index: -10;
+	}
+	&:after {
+		position: absolute;
+		display: block;
+		height: 2px;
+		width: 140%;
+		left: -20%;
+		top: -12px;
+		background: transparent;
+		content: '';
+		transition: all 0.1s ease-in-out;
+		z-index: -11;
+		transition-delay: 0.05s;
+	}
+
+	&:hover {
+		color: $hover;
+		&:before {
+			height: calc(100% + 4px);
+			pointer-events: none;
+		}
+		&:after {
+			height: 150%;
+			background: rgba($background, 0.05);
+			transform: rotate(8deg);
+			pointer-events: none;
+		}
+	}
+}

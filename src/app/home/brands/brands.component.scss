@@ -1,0 +1,37 @@
+@import '../../../styles.scss';
+
+:host ::ng-deep section {
+	padding: 90px 0;
+	background: $black;
+	position: relative;
+	.container {
+		ul {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			@media (max-width: $small-desktop) {
+				grid-template-columns: repeat(6, 1fr);
+			}
+			@media (max-width: $below-tablet) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+			grid-column: 1/-1;
+		}
+		li {
+			grid-column: span 2;
+			min-height: 100px;
+			display: flex;
+			align-items: center;
+			img {
+				opacity: 0.2;
+				width: 100%;
+				margin: auto;
+				max-width: 120px;
+			}
+		}
+	}
+	p.meta {
+		@include meta(white, 0.08);
+		left: 80px;
+
+	}
+}
