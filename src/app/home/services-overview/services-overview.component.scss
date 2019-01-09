@@ -42,7 +42,7 @@
 						position: absolute;
 						height: 1px;
 						width: 30px;
-						background: $coral;
+						background: $accent-color;
 						left: 0;
 						bottom: 0;
 						content: '';
@@ -53,7 +53,7 @@
 						font-weight: 900;
 						font-style: initial;
 						font-size: 32px;
-						color: $black;
+						color: $headline-dark;
 						@media (max-width: $below-tablet) { font-size: 20px; }
 					}
 				}
@@ -76,7 +76,7 @@
 		@media (max-width: $below-tablet) { grid-column: 1/-1; }
 
 		a {
-			@include button-primary($coral);
+			@include button-primary($btn-primary-color);
 		}
 		
 	}
@@ -115,7 +115,7 @@
 		bottom: 0;
 		margin: auto;
 		height: 300px;
-		background: $coral;
+		background: $callout-color;
 		transition: all 0.3s ease;
 		color: $white;
 		display: flex;

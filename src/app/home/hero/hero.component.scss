@@ -7,6 +7,7 @@ section {
 	position: relative;
 	display: flex;
 	overflow: hidden;
+	text-align: center;
 	div {
 		grid-column: 1/-1;
 		@media (max-width: $below-tablet) { grid-column: 2/-1; }
@@ -32,12 +33,13 @@ section {
 				font-family: $serif-font;
 				font-style: italic;
 				font-weight: bold;
+				color: $white;
 			}
 		}
 	}
+
 	div.callout {
 		position: absolute;
-		
 		top: 0;
 		bottom: 0;
 		right: 0;
@@ -46,8 +48,7 @@ section {
 		font-weight: bold;
 		height: 80%;
 		width: 80%;
-		// color: darken($orange, 1%);
-		color: #ffa617;
+		color: lighten($hero-background, 18%);
 		opacity: 0.3;
 		z-index: 0;
 		display: flex;
@@ -56,6 +57,5 @@ section {
 			font-size: 14vw;
 			line-height: 1;
 		}
-		// transform: rotate(-20deg);
 	}
 }

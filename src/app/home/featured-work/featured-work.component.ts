@@ -61,17 +61,16 @@ export class FeaturedWorkComponent implements OnInit {
 
       this.posts.map(el => {
         el.primaryColor = el.acf.custom_primary_color;
-        if(el.acf.light_hover_description === false) {
+        if(el.acf.dark_hover_title === true) {
           el.darkHeader = true;
         }
         else {
           el.darkHeader = false;
         }
-        if(el.acf.light_hover_description) { el.lightDescription = true }
+        if(el.acf.light_hover_description === true) { el.lightDescription = true }
           else {
             el.lightDescription = false;
           }
-        console.log(el.acf);
       });
     }
     
