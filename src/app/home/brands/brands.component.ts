@@ -23,7 +23,6 @@ export class BrandsComponent implements OnInit {
 		for (const item of Array.from(img)) {
      		this.logos.push(item);
 		}
-    console.log(this.logos);
 }
 
   ngOnInit() {

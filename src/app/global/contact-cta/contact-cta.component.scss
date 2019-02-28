@@ -12,7 +12,9 @@ section {
 			text-transform: lowercase;
 		}
 		p {
-			margin-bottom: 10px;
+			margin-bottom: 20px;
+			line-height: 1.6;
+			letter-spacing: 0.2px;
 			&.callout {
 				font-family: $serif-font;
 				font-style: italic;

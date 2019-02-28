@@ -15,7 +15,6 @@ export class BrandsResolverService {
   	if(route.data.brandsPageId) {
   		this.brandsPageId = route.data.brandsPageId;
   	}
-  	console.log(this.brandsPageId)
 		return this.postService.getPage(this.brandsPageId).pipe(map(data => { return data; }));
 	}
 }

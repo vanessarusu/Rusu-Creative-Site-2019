@@ -11,7 +11,7 @@
 $white: #fff;
 $offwhite: #d9d8dd;
 $navy: #052838;
-$dark: #011216;
+$dark: #191a1b;
 $red: #DB473B;
 $hotpink: #fc30aa;
 $pink: #f85da9;
@@ -20,21 +20,23 @@ $mint: #30c7bc;
 $blue-alt: #238df7;
 $blue: #509CAA;
 $plum: #AA1D67;
-$coral: #FF4D49;
+$coral: #f26555;
 $deep-blue: #044c56;
 $yellow: #ffd400;
 $purple: #004eff;
 $orange: #ffb100;
 $lilac: #3f5cc3;
-$black: #1c1b20;
+$black: #2a2e2f;
+
+$blue-grey: #485961;
 
 $headline-color: $purple;
 $headline-dark: $black;
 $secondary-color: $pink;
-$accent-color: $lilac;
+$accent-color: $coral;
 $hero-background: $orange;
-$hero-typography: $navy;
-$callout-color: $deep-blue;
+$hero-typography: #2a2e2f;
+$callout-color: $coral;
 
 $btn-primary-color: $coral;
 
@@ -47,6 +49,10 @@ $tablet: 768px;
 $phone: 500px;
 
 $global-offset: 30px;
+
+.modal-open {
+	overflow: hidden;
+}
 
 
 
@@ -102,40 +108,22 @@ table {
 
 
 
-
-
-
-
-
-
-
-// .content {
-// 	max-width: 85rem;
-// 	width: 90%;
-// 	margin: 0 auto;
-// 	&:after {
-// 		content:'';
-// 		display: block;
-// 		clear: both;
-// 		float: none;
-// 	}
-// } 
 ::selection {
-	background: $mint;
+	background: $orange;
 	color: $white;
 }
 body {
 	background: $white;
 	margin: 0;
 	font-family: $sans-serif-font;
-	color: $navy;
+	color: $black;
 	overflow-x: hidden;
 }
 a {
 	text-decoration: none;
 }
 p {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.2rem;
 	font-weight: 300;
 	letter-spacing: 0.2px;
@@ -151,61 +139,6 @@ li {
 	display: none !important;
 }
 
-// .button {
-// 	color: $white;
-// 	font-size: 0.8rem;
-// 	font-weight: 100;
-// 	letter-spacing: 0.5px;
-// 	padding: 0.5rem 1.5rem;
-// 	transform: scale(1.0);
-// 	display: inline-block;
-// 	border-radius: 2px;
-// 	cursor: pointer;
-// 	cursor: hand;
-// 	&:after {
-// 		content: '';
-// 		width: 0;
-// 		height: 100%;
-// 		position: absolute;
-// 		top: 0;
-// 		left: 0;
-// 		background: red;
-// 		z-index: -1;
-// 		transition: width 0.2s ease;
-// 	}
-// 	&:hover {
-// 		@media screen and (min-width: 1024px) {
-// 			&:after {
-// 				width: 100%;
-// 			}
-// 		}
-// 	}
-// 	&:focus {
-// 		border: 2px solid $white;
-// 	}
-// }
-// .button-mint {
-// 	background: rgba(28,247,205,0.5);
-// 	border: 2px solid $mint;
-// 	&:after {
-// 		background: $mint;
-// 	}
-// }
-// .button-blue {
-// 	background: rgba(35,141,247,0.5);
-// 	border: 2px solid $blue;
-// 	&:after {
-// 		background: $blue;
-// 	}
-// }
-
-// .button-dark {
-// 	background: rgba(5,40,56,0.8);
-// 	border: 2px solid $dark;
-// 	&:after {
-// 		background: $navy;
-// 	}
-// }
 
 
 

@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef, OnInit, AfterContentInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, HostListener, ElementRef, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Headers } from '@angular/http';
 import { PostServiceService } from './../../global/post-service.service'
 import { Observable } from 'rxjs';
@@ -38,7 +38,7 @@ declare var Parallax: any;
   ]
 })
 
-export class ServicesOverviewComponent implements OnInit, AfterContentInit, AfterViewInit {
+export class ServicesOverviewComponent implements OnInit, AfterViewInit {
 	threeKings: any;
   specificsList: any;
   valuesBlock: any;
@@ -56,7 +56,6 @@ export class ServicesOverviewComponent implements OnInit, AfterContentInit, Afte
       if (scrollPosition >= componentPosition-400) {
         this.fadeIn = true;
       }
-
     }
 
 
@@ -69,10 +68,6 @@ export class ServicesOverviewComponent implements OnInit, AfterContentInit, Afte
 
     this.postService.getSinglePost(143)
     .subscribe(data => { this.specificsList = data; });
-
-    this.postService.getSinglePost(145)
-    .subscribe(data => { this.valuesBlock = data; console.log(this.valuesBlock); });
-
 	}
 	animationDone($event) {
     	// console.log('End');
@@ -84,15 +79,6 @@ export class ServicesOverviewComponent implements OnInit, AfterContentInit, Afte
 
   ngOnInit() {
   	this.getPosts();
-  }
-
-  ngAfterContentInit() {
-  	// const scene = document.getElementById("figure");
-  	// console.log(scene);
-  	// const parallaxInstance = new Parallax(scene, {
-  	// 	limitX: 40,
-  	// 	limitY: 20
-  	// });
   }
 
   ngAfterViewInit() {

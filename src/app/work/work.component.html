@@ -1,11 +1,15 @@
 <section>
 	<div class="container">
-		<h2>The Work</h2>
-		<object class="underline-squiggle" type="image/svg+xml" data="../assets/squiggle.svg"></object>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices eu metus id fermentum. Proin sagittis ligula id arcu varius finibus. Aenean tristique faucibus sapien, id laoreet lacus.</p>
 		<div>
-			<a href="#">Let's work together</a>
+			<h2>The Work</h2>
+				<object class="underline-squiggle" type="image/svg+xml" data="../assets/squiggle.svg"></object>
+				<p>A brief selection of branding, print materials, web design, and web development work.</p>
+			
 		</div>
+		<div class="cta">
+				<a [routerLink]="['/connect']">Let's work together</a>
+			</div>	
+		
 	</div>
 	<p class="meta">our best stuff</p>
 </section>
@@ -13,3 +17,5 @@
 	<app-featured-work></app-featured-work>
 </section>
 <app-brands></app-brands>
+<app-contact-cta></app-contact-cta>
+<app-instagram></app-instagram>

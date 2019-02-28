@@ -12,11 +12,25 @@ import { trigger, state, style, animate, transition, query, stagger } from '@ang
 		trigger('enterAnim', [
 			transition('* => *', [
 				query('p', 
-					style({ 
+					style({
 						opacity: '0',
 						clipPath: 'polygon(0 0, 100% 0, 100% 10%, 0 10%)',
 						transform: 'translateY(30px)'
+					}), 
+				),
+				query('.callout', 
+					style({ 
+						opacity: '0',
+						transform: 'translateY(8px)'
 					})
+				),
+				query('.callout', 
+					animate('800ms cubic-bezier(.28,.19,.18,1.15)', 
+						style({
+							opacity: '0.08',
+							transform: 'translateY(0)'
+						}), 
+					), { delay: '300ms' }
 				),
 				query('p', 
 					stagger('200ms', [
@@ -28,8 +42,7 @@ import { trigger, state, style, animate, transition, query, stagger } from '@ang
 							})
 						) 
 					]), 
-					{ delay: '1000ms' }
-				)
+				),
 			])
 		]),
 	]

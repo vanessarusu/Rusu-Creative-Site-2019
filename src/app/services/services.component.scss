@@ -1,0 +1,255 @@
+@import '../../styles.scss';
+:host ::ng-deep section#intro {
+	background: $coral;
+	color: $white;
+	p.meta {
+		margin-top: 30px;
+		@include meta($black, 0.2);
+		right: 80px;
+	}
+	.container {
+		padding: 50px 0 100px;
+		position: relative;
+
+		h2 {
+			@include h2();
+			span {
+				font-family: $serif-font;
+				font-style: italic;
+			}
+
+			grid-column: 1/5;
+			@media(max-width: $tablet) { text-align: center; }
+		}
+
+		p {
+			margin: 50px 0;
+			color: $black;
+			@media(max-width: $tablet) { margin: auto; }
+		}
+		.left {
+			grid-column: 1/6;
+			@media(max-width: $tablet) { grid-column: 2/12; }
+			text-align: left;
+			@media(max-width: $tablet) { text-align: center; margin: 50px auto; }
+		}
+		.right {
+			color: $black;
+			box-shadow: 2px 2px 20px 2px rgba($black, 0.1);
+			background: #f2f2f2;
+			padding: 30px;
+			grid-column: 9/-1;
+			align-self: center;
+			padding-top: 300px;
+			margin-top: -300px;
+			@media(max-width: $tablet) { 
+				grid-column: 2/12;  
+				text-align: center;
+				padding-top: 0;
+				margin-top: 30px;
+			}
+			p {
+				font-weight: bold;
+				font-size: 16px;
+				text-transform: lowercase;
+				margin: 100px auto 10px;
+				padding: 0;
+				font-family: $serif-font;
+				font-style: italic;
+				@media(max-width: $tablet) {
+					margin-top: 50px;
+				}
+			}
+
+			li {
+				a {
+					padding: 20px 0;
+					color: $black;
+					border-bottom: 1px solid rgba($black, 0.1);
+					text-transform: uppercase;
+					display: block;
+					font-weight: bold;
+					letter-spacing: 0.5px;
+					font-style: italic;
+					font-size: 12px;
+					line-height: 12px;
+					transition: all 0.2s ease;
+					cursor: pointer;
+					span {
+						opacity: 0.1;
+						font-size: 30px;
+						margin-right: -20px;
+					}
+					&:hover {
+						@media (min-width: $tablet) {
+							&.brand-refinement {
+								color: $orange;
+								background: rgba($yellow, 0.04);
+								border-color: $orange;
+							}
+							&.brand-support {
+								color: $mint;
+								background: rgba($mint, 0.04);
+								border-color: $mint;
+							}
+							&.web-design {
+								color: $coral;
+								background: rgba($coral, 0.04);
+								border-color: $coral;
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+}
+
+
+:host ::ng-deep section {
+	#servicesOverview {
+		.container {
+			margin: auto;
+		}
+		.service-individual {
+			text-align: left;
+			&:nth-child(odd) {
+				background: white;
+			}
+			grid-column: 1/-1;
+			text-align: left;
+			min-height: 95vh;
+
+			img {
+				max-width: 190px;
+				margin-top: -20px;
+				margin-left: 70px;
+				@media (max-width: $tablet) {
+					margin: auto;
+					padding-top: 30px;
+					max-width: 140px;
+					display: block;
+				}
+			}
+
+			.container {
+				padding: 0 0 60px;
+				p {
+					text-align: left;
+					margin: 40px 0;
+				}
+				.left {
+					grid-column: 1/7;
+					@media (max-width: $small-desktop) { grid-column: 2/12; }
+					h2 {
+						@include h2();
+						font-size: 36px;
+						grid-column: 1/7;
+						text-align: left;
+						span {
+							font-family: $serif-font;
+							font-style: italic;
+						}
+
+						@media(max-width: $tablet) { text-align: center; }
+					}
+					object {
+						display: block;
+					}
+					> div {
+						p {
+							&:first-of-type {
+								font-family: $serif-font;
+								font-style: italic;
+								font-size: 18px;
+							}
+							&.italics {
+								font-weight: bold;
+								font-size: 12px;
+								max-width: 400px;
+							}
+							line-height: 1.4;
+							@media (max-width: $small-desktop) { width: 100%; max-width: unset; }
+						}
+					}
+					
+					.cta {
+						margin: 80px auto;
+					}
+				}
+				.right {
+					grid-column: 9/12;
+					@media (max-width: $small-desktop) { display: none;}
+					align-self: center;
+
+					> div > p {
+						font-family: $serif-font;
+						font-style: italic;
+						font-size: 14px; 
+						font-weight: bold;
+					}
+					.phases {
+						li > p {
+							padding: 10px 0 0;
+							margin: 20px 0 10px;
+							font-size: 12px;
+							font-weight: bold;
+							text-transform: uppercase;
+							letter-spacing: 4px;
+							font-style: italic;
+							&.italics {
+								text-transform: lowercase;
+								font-size: 12px;
+								border-bottom: none;
+								letter-spacing: 0;
+								line-height: 1.4;
+								font-weight: 100;
+							}
+						}
+						ul.bullets {
+							display: block;
+							li {
+								font-size: 12px;
+								line-height: 16px;
+								font-weight: 100;
+								text-transform: capitalize;
+								margin-bottom: 5px;
+								margin-left: 20px;
+
+								&:before {
+									content: "\2022";
+									margin-left: -20px;
+									display: inline-block;
+									width: 20px;
+								}
+							}
+						}
+					}
+					li {
+						text-align: left
+					}
+				}				
+			}
+
+			&.brand-refinement {
+				h2 span { color: $orange; }
+				ul.bullets li:before { color: $orange; }
+				.cta a { @include button-primary($orange); }
+			}
+
+			&.web-design {
+				background: #f2f2f2;
+				h2 span { color: $coral; }
+				ul.bullets li:before { color: $coral; }
+				.cta a { @include button-primary($coral); }
+			}
+
+			&.brand-support {
+				h2 span { color: $mint; }
+				ul.bullets li:before { color: $mint; }
+				.cta a { @include button-primary($mint); }
+			}
+		}
+	}
+}

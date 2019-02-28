@@ -5,9 +5,73 @@ header {
 	background: #fff;
 	position: relative;
 	z-index: 100;
+	nav {
+		@media (max-width: $small-desktop) {
+			display: flex;
+			align-content: center;
+			flex-wrap: wrap;
+			position: fixed;
+			top: 0px;
+			left: 25vw;
+			bottom: 0px;
+			right: 0;
+			background: rgba($white, 1);
+			left: 100vw;
+			transition: all 0.1s ease-in-out;
+			box-shadow: 2px 2px 30px 2px rgba($black, 0.2);
+			opacity: 0;
+			&.open {
+				left: 20vw;
+				opacity: 1;
+			}
+		}
+		#contactInfo {
+			width: 70%;
+			margin: 80px auto 10px;
+			h4 {
+				font-family: $serif-font;
+				margin-bottom: 20px;
+				font-style: italic;
+				opacity: 0.8;
+			}
+			p {
+				font-size: 14px;
+				margin: 5px auto;
+			}
+			#aboutCTA {
+				display: grid;
+				grid-template-columns: repeat(12, minmax(30px, 1fr));
+				margin-top: 40px;
+				a {
+					grid-column: span 1;
+					color: $coral;
+					i.fab {
+						font-family: "Font Awesome 5 Brands";
+					}
+					i.fal {
+						font-family: "Font Awesome 5 Pro";
+					}
+					&.btn {
+						@include button-primary($coral);
+						text-align: center;
+						grid-column: 9/-1;
+						@media (max-width: $below-tablet) { grid-column: 1/-1 }
+						@media (max-width: $below-tablet) { margin: 30px 0; }
+						max-width: 150px;
+					}
+					
+				}
+			}
+		}
+	}
 	ul {
 		display: flex;
 		justify-content: center;
+		@media (max-width: $small-desktop) {
+			display: block;
+			align-self: center;
+			width: 100%;
+		}
 		li {
 			a {
 				padding: 30px;
@@ -16,8 +80,56 @@ header {
 				letter-spacing: 3px;
 				font-size: 11px;
 				color: $black;
+				transition: background 0.1s ease-in-out;
+				position: relative;
+				&:after {
+					display: block;
+					content: '';
+					position: absolute;
+					bottom: 0px;
+					left: 0;
+					width: 0%;
+					height: 5px;
+					background: transparent;
+					transition: all 0.2s ease-in-out;
+				}
 				&:hover {
-					background: pink;
+					@media(min-width: $small-desktop) {
+						background: rgba(#f2f2f2, 0.5);
+						&:after {
+							background: $orange;
+							width: 100%;
+						}
+					}
+				}
+				@media (max-width: $small-desktop) {
+					padding: 8px;
+					width: 70%;
+					margin: 0 auto;
+					text-transform: lowercase;
+					letter-spacing: 0;
+					font-size: 30px;
+					font-weight: bold;
+					&:after {
+						display: block;
+						width: 0px;
+						content: '';
+						position: absolute;
+						bottom: 4px;
+						height: 15px;
+						z-index: -10;
+						background: rgba($orange, 0.4);
+					}
+					&:hover {
+						&:after {
+							width: 200px;
+						}
+					}
+				}
+				@media (max-width: $below-tablet) {
+					font-size: 20px;
+				}
+				&.callout {
 				}
 			}
 		}
@@ -25,4 +137,60 @@ header {
 }
 .fixed {
 
+}
+#logo {
+	width: 175px;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 18px;
+	left: 0;
+	cursor: pointer;
+	@media (max-width: $small-desktop) {
+		display: block;
+		background: $white;
+		width: 100%;
+		height: 60px;
+	}
+	img {
+		max-width: 175px;
+		margin-left: 30px;
+		&:focus {
+			outline: none;
+		}
+	}
+
+}
+#mobileMenu {
+	display: none;
+	@media(max-width: $small-desktop) {
+		display: block;
+	}
+	position: absolute;
+	right: 30px;
+	cursor: pointer;
+	height: 50px;
+	width: 150px;
+	top: 10px;
+	text-align: right;
+	line-height: 50px;
+	font-family: $serif-font;
+	font-style: italic;
+	font-weight: bold;
+}
+a.instagram {
+	position: absolute;
+	right: 30px;
+	cursor: pointer;
+	height: 50px;
+	top: 10px;
+	line-height: 50px;
+	color: $orange;
+	i.fab {
+		font-family: "Font Awesome 5 Brands";
+	}
+	@media(max-width: $small-desktop) {
+		display: none;
+	}
 }

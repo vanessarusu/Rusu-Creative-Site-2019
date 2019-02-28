@@ -3,6 +3,7 @@
 :host ::ng-deep section {
 	ul.container {
 		width: 100%;
+		clip-path: inset(0 0 3px 0);
 		max-width: calc(100% - #{$global-offset});
 		@media (max-width: $below-tablet) { display: none; }
 		li {

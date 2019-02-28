@@ -7,9 +7,8 @@ section {
 	}
 }
 .container {
-	margin: 50px auto 100px;
+	padding: 50px 0 100px;
 	position: relative;
-	@media(max-width: $tablet) { grid-template-columns: 1fr }
 
 	h2 {
 		@include h2();
@@ -18,10 +17,7 @@ section {
 
 	}
 	p {
-		grid-column: 1/7;
 		@media(max-width: $tablet) {
-			width: 75%;
-			max-width: 400px; 
 			margin: auto; 
 		}
 
@@ -29,13 +25,19 @@ section {
 	}
 	div {
 		display: block;
-		grid-column: 1/-1;
-		text-align: right;
+		grid-column: 1/8;
+		text-align: left;
 		@media(max-width: $tablet) { text-align: center; margin-top: 50px; }
+		@media(max-width: $tablet) { grid-column: 2/12; }
 
 	}
-	a {
-		@include button-primary($coral);
+	.cta {
+		text-align: right;
+		@media(max-width: $tablet) { text-align: center; }
+		grid-column: 1/-1;
+		a {
+			@include button-primary($coral);
+		}
 	}
 }
 :host ::ng-deep section#workPage {

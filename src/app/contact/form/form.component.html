@@ -1,0 +1,89 @@
+
+<section *ngIf="!submitted">
+	<div>
+		<form name="form" 
+			(ngSubmit)="f.form.valid && submitForm()" 
+			#f="ngForm" 
+			novalidate
+			class="container">
+			<div class="content">
+				<h2>Let's chat!</h2>
+			</div>
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" 
+					class="form-control" 
+					name="name" 
+					placeholder="Name" 
+					[(ngModel)]="model.name" 
+					#name="ngModel" 
+					[ngModelOptions]="{ updateOn: 'blur' }"
+					[ngClass]="{ 'is-invalid': f.submitted && name.invalid }" 
+					minlength="3"
+					required />
+					<div [hidden]="name.valid || name.pristine"
+					class="alert alert-danger">
+					name is required
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="text" 
+					class="form-control" 
+					name="email" 
+					placeholder="Email" 
+					[(ngModel)]="model.email" 
+					#email="ngModel" 
+					[ngModelOptions]="{ updateOn: 'blur' }"
+					[ngClass]="{ 'is-invalid': f.submitted && email.invalid }" 
+					required 
+					email />
+				<div [hidden]="email.valid || email.pristine"
+					class="alert alert-danger">
+					email is required
+				</div>
+			</div>
+
+			<div class="form-group select">
+				<label for="intent">Option</label>
+				<p>What are your looking for?</p>
+
+				<ng-select 
+					*ngIf="intent" 
+					id="dropdown" 
+					name="selectbox"
+					[options]="intent" 
+					[styleGuide]="styleGuide"  
+					[displayKey]="displayKey" 
+					[(ngModel)]="model.intent" 
+					name="intent"></ng-select>
+			</div>
+
+			<div class="form-group textarea">
+				<label for="message">Message</label>
+				<textarea 
+					type="text" 
+					rows="4"
+					class="form-control textarea" 
+					name="message" 
+					placeholder="Message" 
+					[(ngModel)]="model.message" 
+					#message="ngModel" 
+					[ngClass]="{ 'is-invalid': f.submitted && message.invalid }"></textarea>
+			</div>
+
+			<div class="submit-container">
+				<button class="btn btn-primary" type="submit">Get in Touch</button>
+			</div>
+
+		</form>
+	</div>
+	
+</section>
+<section *ngIf="submitted" id="submitted">
+	<div class="container">
+		<p>Thanks, {{model.name}}! We will be in touch soon.</p>
+	</div>
+</section>
+<app-contact-cta></app-contact-cta>

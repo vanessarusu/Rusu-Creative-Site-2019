@@ -1,3 +1,81 @@
-img {
-	max-width: 100%;
+@import '../../styles.scss';
+
+:host ::ng-deep section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	figure {
+		min-height: calc(100vh - 70px);
+		@media (max-width: $small-desktop) { min-height: unset; }
+		grid-column: span 1;
+		@media (max-width: $small-desktop) { grid-column: span 2; }
+		overflow: hidden;
+		img {
+			min-height: calc(100vh - 70px);
+			max-height: 100%;
+			object-fit: cover;
+			@media (max-width: $small-desktop) { min-height: unset; max-height: unset; object-fit: unset; width: 100%;}
+			@media (max-width: $below-tablet) { margin-top: 50px; }
+		}
+	}
+
+	#aboutContent {
+		grid-column: span 1;
+		margin: 50px auto;
+		@media (max-width: $small-desktop) { grid-column: span 2; }
+		@media (max-width: $small-desktop) { max-width: 80%;}
+		h2 {
+			@include h2();
+			margin-top: 0;
+			grid-column: 1/-1;
+		}
+		.underline-squiggle {
+			margin-bottom: 50px;
+			display: block; @media(max-width: $small-desktop){ margin-left: 0; }
+		}
+		div {
+			grid-column: 1/11;
+
+			p:first-of-type {
+				font-weight: bold;
+				font-size: 18px;
+			}
+			p {
+				margin-bottom: 20px;
+				font-size: 14px;
+				line-height: 20px;
+			}
+			p:last-of-type {
+				font-size: 11px;
+				line-height: 16px;
+				opacity: 0.5;
+				font-weight: 500;
+			}
+		}
+	}
+
+	#aboutCTA {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(30px, 1fr));
+		margin-top: 50px;
+		a {
+			grid-column: span 1;
+			color: #b18e84;
+			i.fab {
+				font-family: "Font Awesome 5 Brands";
+			}
+			i.fal {
+				font-family: "Font Awesome 5 Pro";
+			}
+			&.btn {
+				@include button-primary(#658ca5, #658ca5);
+				text-align: center;
+				grid-column: 9/-1;
+				@media (max-width: $below-tablet) { grid-column: 1/-1 }
+				@media (max-width: $below-tablet) { margin: 30px 0; }
+				max-width: 150px;
+			}
+			
+		}
+	}
 }

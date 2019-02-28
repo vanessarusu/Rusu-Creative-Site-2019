@@ -11,7 +11,12 @@ import { InstagramResolverService } from './global/instagram-resolver.service';
 import { ProjectResolverService } from './global/project-single/project-resolver.service';
 import { BrandsResolverService } from './home/brands/brands-resolver.service';
 import { WorkResolverService } from './work/work-resolver.service';
+import { AboutResolverService } from './about/about-resolver.service';
 import { WorkComponent } from './work/work.component';
+import { ServicesComponent } from './services/services.component';
+import { ServicesResolverService } from './services/services-resolver.service';
+import { FormComponent } from './contact/form/form.component';
+import { BrandAuditComponent } from './brand-audit/brand-audit.component';
 
 
 const routes: Routes = [
@@ -49,7 +54,11 @@ const routes: Routes = [
 		path: "about",
 		component: AboutComponent,
 		resolve : {
-			feed: InstagramResolverService
+			feed: InstagramResolverService,
+			content: AboutResolverService
+		},
+		data: {
+			postID: 245
 		}
 	},
 	{
@@ -57,13 +66,32 @@ const routes: Routes = [
 		component: WorkComponent,
 		resolve : {
 			posts: WorkResolverService,
-			brands: BrandsResolverService
+			brands: BrandsResolverService,
+			feed: InstagramResolverService
 		},
 		data: {
 			brandsPageId: 86,
 			projectCategoryId: 4
 		}
 	},
+	{
+		path: "services",
+		component: ServicesComponent,
+		resolve: {
+			services: ServicesResolverService
+		},
+		data: {
+			servicesCategoryId: 7
+		}
+	},
+	{
+		path: "connect",
+		component: FormComponent,
+	},
+	{
+		path: "free-brand-audit-guide",
+		component: BrandAuditComponent,
+	}
 
 ];
 

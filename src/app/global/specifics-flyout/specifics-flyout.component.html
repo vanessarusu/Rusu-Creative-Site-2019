@@ -1,0 +1,11 @@
+<section id="flyout" *ngIf="specificsList"
+	(click)="specsClick()" 
+	[ngClass]="specs ? 'open' : 'closed'">
+	<div class="specs-block">
+		<div>
+			<p class="title" [innerHTML]=specificsList.title.rendered></p>
+			<div [innerHTML]=specificsList.content.rendered></div>
+		</div>
+	</div>
+	<span><img src="../assets/arrow.svg"></span>
+</section>

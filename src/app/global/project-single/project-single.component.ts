@@ -8,6 +8,7 @@ import { Post } from '../../post';
   templateUrl: './project-single.component.html',
   styleUrls: ['./project-single.component.scss']
 })
+
 export class ProjectSingleComponent implements OnInit {
 	currentProject: Post;
   primaryColor: String;
@@ -19,12 +20,16 @@ export class ProjectSingleComponent implements OnInit {
   clientWebsite: String;
   solutionOverview: String;
 	slug: string;
+  showOverviewScroll: boolean = true;
 
   constructor(private postService: PostServiceService, private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit() {
-    console.log(this.currentProject);
+  scroll(el) {
+    el.scrollIntoView({behavior: "smooth"});
+    // this.showOverviewScroll = false;
+  }
 
+  ngOnInit() {
    this.currentProject = this.activatedRoute.snapshot.data.currentProject;
    this.primaryColor = this.currentProject.acf.custom_primary_color;
    this.secondaryColor = this.currentProject.acf.custom_secondary_color;

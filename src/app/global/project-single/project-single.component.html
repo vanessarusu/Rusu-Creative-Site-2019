@@ -3,19 +3,21 @@
 		<figure>
 			<img [src]="currentProject.acf.post_single_hero_image">
 		</figure>
-	<div *ngIf="currentProject && currentProject.acf" class="content container">
-			<div class="titles">
-				<h2>{{ currentProject.title.rendered }}</h2>
-				<h3 [ngStyle]="{ 'color': bodyFontColor ? secondaryColor : '' }">{{ categories }}</h3>
+		<div class="content">
+			<div *ngIf="currentProject && currentProject.acf" class="container" #overviewTarget>
+				<a class="scroll" (click)="scroll(overviewTarget)"><img src="../../assets/scroll-icon.svg"></a>
+				<div class="titles">
+					<h2>{{ currentProject.title.rendered }}</h2>
+					<h3 [ngStyle]="{ 'color': bodyFontColor ? secondaryColor : '' }">{{ categories }}</h3>
+				</div>
+				<div class="description">
+					<p class="label">Project Description</p>
+					<p>{{ subtext }}</p>
+					<p class="label" *ngIf="clientWebsite">Client Website</p>
+					<a [href]="clientWebsite" [ngStyle]="{ 'color': linkColor ? linkColor : '' }">{{ clientWebsite }}</a>
+				</div>
+				<div class="post-body" [innerHTML]="solutionOverview"></div>
 			</div>
-			<div class="description">
-				<p class="label">Project Description</p>
-				<p>{{ subtext }}</p>
-				<p class="label" *ngIf="clientWebsite">Client Website</p>
-				<a [href]="clientWebsite" [ngStyle]="{ 'color': linkColor ? linkColor : '' }">{{ clientWebsite }}</a>
-			</div>
-			
-			<div class="post-body" [innerHTML]="solutionOverview"></div>
 		</div>
 	</div>
 	<div class="project-shots" [innerHTML]="currentProject.content.rendered"></div>

@@ -1,8 +1,19 @@
-<section>
-	<div>
-		<h3>About The Studio</h3>
-		<p></p>
+<section *ngIf="aboutContent">
+	<figure>
+		<img [src]="aboutContent._embedded['wp:featuredmedia']['0'].source_url">
+	</figure>
+	<div id="aboutContent" class="container">
+		<h2>{{aboutContent.title.rendered}}</h2>
+		<object class="underline-squiggle" type="image/svg+xml" data="../assets/squiggle.svg"></object>
+		<div [innerHTML]="aboutContent.content.rendered">
+		</div>
+		<div id="aboutCTA">
+			<a href="https://www.instagram.com/vanessas.ink/" target="blank"><i class="fab fa-instagram"></i></a>
+				<a href="https://dribbble.com/vanessarusu" target="blank"><i class="fab fa-dribbble"></i></a>
+				<a href="https://www.linkedin.com/in/vanessarusu/" target="blank"><i class="fab fa-linkedin-in"></i></a>
+				<a href="mailto:vanessarusu@gmail.com"><i class="fal fa-envelope"></i></a>
+			<a [routerLink]="['/connect']" class="btn">Let's work together</a>
+		</div>
 	</div>
 </section>
-<img src="../assets/bg.jpg">
 <app-instagram></app-instagram>

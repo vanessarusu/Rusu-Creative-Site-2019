@@ -1,4 +1,4 @@
-@mixin button-primary($background: blue, $color: black, $hover: white) {
+@mixin button-primary($background: blue, $color: $black, $hover: white) {
 	font-family: $serif-font;
 	text-transform: lowercase;
 	color: $color;
@@ -33,18 +33,19 @@
 		z-index: -11;
 		transition-delay: 0.05s;
 	}
-
-	&:hover {
-		color: $hover;
-		&:before {
-			height: calc(100% + 4px);
-			pointer-events: none;
-		}
-		&:after {
-			height: 150%;
-			background: rgba($background, 0.05);
-			transform: rotate(8deg);
-			pointer-events: none;
+	@media (min-width: $tablet) {
+		&:hover {
+			color: $hover;
+			&:before {
+				height: calc(100% + 4px);
+				pointer-events: none;
+			}
+			&:after {
+				height: 150%;
+				background: rgba($background, 0.05);
+				transform: rotate(8deg);
+				pointer-events: none;
+			}
 		}
 	}
 }

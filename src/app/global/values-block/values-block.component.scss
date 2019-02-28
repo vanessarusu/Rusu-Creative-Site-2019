@@ -1,0 +1,45 @@
+@import '../../../styles.scss';
+
+:host ::ng-deep#valuesBlock {
+	position: relative;
+	margin-bottom: 100px;
+	.text-block {
+		img {
+			max-width: 100%;
+			grid-column: 1/7;
+			grid-row: 1/-1;
+			min-height: 500px;
+			@media (max-width: $small-desktop) { min-height: 600px; }
+			object-fit: cover;
+			overflow: hidden;
+			@media (max-width: $below-tablet) { display: none; }
+		}
+		h3 {
+			margin-top: 0;
+			grid-column: 8/12;
+			@media (max-width: $below-tablet) { grid-column: 2/12; }
+			align-self: center;
+			span {
+				display: block;
+				opacity: 0.2;
+				font-size: 24px;
+			}
+		}
+		object {
+			display: block;
+		}
+		div {
+			grid-column: 8/-1;
+			margin-top: 40px;
+			@media (max-width: $below-tablet) { grid-column: 2/12; }
+			p {
+				margin-bottom: 20px;
+				line-height: 1.6;
+				&:first-of-type {
+					font-weight: bold;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}

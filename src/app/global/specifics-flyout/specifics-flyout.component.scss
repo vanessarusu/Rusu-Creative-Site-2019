@@ -1,0 +1,102 @@
+@import '../../../styles.scss';
+
+:host ::ng-deep section#flyout {
+	margin-bottom: 100px;
+	position: absolute;
+	left: calc(-600px + 35px);
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 600px;
+	min-height: 300px;
+	height: 300px;
+	background: $black;
+	transition: all 0.3s ease;
+	color: $white;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	@media (min-width: $tablet) {
+		&:hover, &.open {
+			left: 0;
+			box-shadow: 1px 1px 23px 0px rgba(0,0,0,0.2);
+			span {
+				opacity: 0;
+			}
+			> div {
+				opacity: 1;
+			}
+		}
+	}
+
+	> div {
+		@media (min-width: $tablet) { opacity: 0; }
+		width: 75%;
+		@media (max-width: $below-tablet) { width: 80%; }
+		margin: 0 auto;
+		align-content: center;
+		transition: all 0.2s ease;
+
+		p {
+			@media (max-width: $below-tablet) { text-align: center; }
+			font-size: 14px;
+			margin-bottom: 20px;
+			&.title {
+				font-size: 30px;
+				font-family: $headline-font;
+				font-weight: bold;
+				@media (max-width: $below-tablet) {
+					font-size: 20px;
+				}
+			}
+		}
+		ul {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		li {
+			list-style: disc;
+			margin-left: 20px;
+			font-size: 12px;
+			@media (max-width: $below-tablet) { font-size: 10px; }
+			line-height: 20px;
+		}
+	}
+		span {
+			color: black;
+			position: absolute;
+			right: -10px;
+			animation: mymove 2s infinite;
+			animation-timing-function: ease-in-out;
+			opacity: 1;
+			transition: all 0.2s ease-in-out;
+			img {
+				width: 10px;
+			}
+			@media (max-width: $below-tablet) {
+				display: none;
+			}
+		}
+		@keyframes mymove {
+    		0% {right: -15px;}
+    		50% {right: -30px;}
+    		100% {right: -15px;}
+		}
+		@media (max-width: $below-tablet) {
+			cursor: pointer;
+			position: relative;
+			min-width: unset;
+			left: unset;
+			top: unset;
+			bottom: unset;
+			margin: auto;
+			height: unset;
+			padding: 0 0 40px;
+			background: transparent;
+			margin: 50px auto;
+			color: $black;
+			display: flex;
+			align-items: center;
+		}
+}

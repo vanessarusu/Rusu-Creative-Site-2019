@@ -10,6 +10,6 @@ export class ProjectResolverService implements Resolve<any> {
 
 	constructor(private postService : PostServiceService, private activatedRoute: ActivatedRoute) {}
 	resolve(route: ActivatedRouteSnapshot) {
-		return this.postService.getSinglePostBySlug(route.params.slug).pipe(map(data => { console.log(data[0]); return data[0] }));
+		return this.postService.getSinglePostBySlug(route.params.slug).pipe(map(data => { return data[0] }));
 	}
 }
