@@ -1,5 +1,6 @@
 <div id="site">
 	<app-header> </app-header>
-	<router-outlet></router-outlet>
+	<div id="loader" *ngIf="showDefaultMessage"><p>loading :)</p></div>
+	<router-outlet (activate)="toggleDefaultMessage(false)" (deactivate)="toggleDefaultMessage(true)"></router-outlet>
 	<app-footer></app-footer>
 </div>

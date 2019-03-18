@@ -89,5 +89,5 @@ export class AppModule { }
 
 
 export function WpApiLoaderFactory(http: Http) {
-  return new WpApiStaticLoader(http, 'http://localhost:8888/2018/bower_components/wordpress/wp-json/wp/v2/', '');
+  return new WpApiStaticLoader(http, 'https://vanessasink.com/wp-json/wp/v2/', '');
 }

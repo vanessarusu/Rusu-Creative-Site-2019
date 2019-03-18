@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
 	private isActive: boolean = false;
 	private isMobile: boolean = false;
-  private mobileMenu: boolean = false;;
+  public mobileMenu: boolean = false;;
   private mobileBreakpoint: number = 1024
 
   constructor(private renderer: Renderer2, private route: ActivatedRoute) {}
@@ -58,6 +58,7 @@ export class HeaderComponent implements OnInit {
     if(window.innerWidth <= this.mobileBreakpoint) {
       this.isMobile = true;
     }
+    console.log('%c \u00A9 2019 Vanessa\'s Ink. hello@vanessasink.com :) ', 'font-size: 16px; color: #ffb100; padding: 20px;');
   }
 
 }

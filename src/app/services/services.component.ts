@@ -15,6 +15,7 @@ export class ServicesComponent implements OnInit {
 	brandRefinement: Post;
 	webDesign: Post;
 	brandSupport: Post;
+	overview: Post;
 
   constructor(private postService: PostServiceService, private activatedRoute: ActivatedRoute, private title: Title) {
   	this.title.setTitle('Services - Vanessa\'s Ink / a creative studio')
@@ -25,10 +26,12 @@ export class ServicesComponent implements OnInit {
   }
 
   ngOnInit() {
+
   	this.services = this.activatedRoute.snapshot.data.services;
-  	this.brandRefinement = this.services[2];
-  	this.webDesign = this.services[1];
-  	this.brandSupport = this.services[0];
+  	this.overview = this.services[0];
+  	this.brandRefinement = this.services[3];
+  	this.webDesign = this.services[2];
+  	this.brandSupport = this.services[1];
   }
 
 }

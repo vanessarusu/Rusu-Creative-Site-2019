@@ -1,6 +1,6 @@
 @import '../../styles.scss';
 
-:host ::ng-deep section {
+:host ::ng-deep section#about {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 

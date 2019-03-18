@@ -12,6 +12,7 @@ export class Post {
 	public darkHeader: boolean;
 	public lightDescription: boolean;
 	public content: any;
+	public title: any;
 	constructor() {
 
 	}

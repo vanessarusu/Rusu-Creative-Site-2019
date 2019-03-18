@@ -25,6 +25,7 @@ export class FormComponent implements OnInit {
 		selectMenuClass: 'dropdown',
 		optionsClass: 'option' 
 	}
+	form;
   
 
   constructor(private postService: PostServiceService, private title:Title) {
@@ -41,10 +42,9 @@ export class FormComponent implements OnInit {
   	formData.append('your-name', this.model.name);
   	formData.append('your-message', this.model.message);
   	formData.append('your-subject', 'Website Form Submission: '+this.model.intent);
-  	// this.form = this.postService.getForm(324, formData).subscribe((res) => {
-  	// 	console.log(res);
-  	// 	return res;
-  	// });
+  	this.form = this.postService.getForm(324, formData).subscribe((res) => {
+  		return res;
+  	});
   }
 
 

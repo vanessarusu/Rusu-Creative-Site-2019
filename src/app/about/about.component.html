@@ -1,10 +1,10 @@
-<section *ngIf="aboutContent">
+<section *ngIf="aboutContent" id="about">
 	<figure>
 		<img [src]="aboutContent._embedded['wp:featuredmedia']['0'].source_url">
 	</figure>
 	<div id="aboutContent" class="container">
 		<h2>{{aboutContent.title.rendered}}</h2>
-		<object class="underline-squiggle" type="image/svg+xml" data="../assets/squiggle.svg"></object>
+		<object class="underline-squiggle" type="image/svg+xml" data="./assets/squiggle.svg"></object>
 		<div [innerHTML]="aboutContent.content.rendered">
 		</div>
 		<div id="aboutCTA">

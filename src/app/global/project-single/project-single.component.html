@@ -5,7 +5,7 @@
 		</figure>
 		<div class="content">
 			<div *ngIf="currentProject && currentProject.acf" class="container" #overviewTarget>
-				<a class="scroll" (click)="scroll(overviewTarget)"><img src="../../assets/scroll-icon.svg"></a>
+				<a class="scroll" (click)="scroll(overviewTarget)"><img src="./../assets/scroll-icon.svg"></a>
 				<div class="titles">
 					<h2>{{ currentProject.title.rendered }}</h2>
 					<h3 [ngStyle]="{ 'color': bodyFontColor ? secondaryColor : '' }">{{ categories }}</h3>

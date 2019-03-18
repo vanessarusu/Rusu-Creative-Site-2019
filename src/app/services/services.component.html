@@ -1,9 +1,9 @@
 <section id="intro">
 	<div class="container">
 		<div class="left">
-			<h2>Services</h2>
-			<object class="underline-squiggle" type="image/svg+xml" data="../assets/squiggle.svg"></object>
-			<p>We believe in solutions that empower you to take a hands-on approach to your brand. We know budgets can be tight and things can move fast, so we work with you to create and design tools that you can use on a daily basis to run your business.</p>
+			<h2 [innerHTML]="overview.title.rendered"></h2>
+			<object class="underline-squiggle" type="image/svg+xml" data="./assets/squiggle.svg"></object>
+			<p [innerHTML]="overview.content.rendered"></p>
 
 		</div>
 		<div class="right">
@@ -22,11 +22,11 @@
 	<div id="servicesOverview">
 		<div class="service-individual brand-refinement" #brandRefinementDiv>
 
-			<img src="../../assets/brand-refinement.svg" class="icon">
+			<img src="./assets/brand-refinement.svg" class="icon">
 			<div class="container" *ngIf="brandRefinement">
 				<div class="left">
 					<h2>Brand <span>Refinement</span></h2>
-					<object class="underline-squiggle" type="image/svg+xml" data="../assets/lines.svg"></object>
+					<object class="underline-squiggle" type="image/svg+xml" data="./assets/lines.svg"></object>
 					<div [innerHTML]="brandRefinement.content.rendered"></div>
 
 					<div class="cta">
@@ -40,11 +40,11 @@
 		</div>
 
 		<div class="service-individual web-design" #webDesignDiv>
-			<img src="../../assets/web-design.svg" class="icon">
+			<img src="./assets/web-design.svg" class="icon">
 			<div class="container" *ngIf="webDesign">
 				<div class="left">
 					<h2>Web Design <span>&amp; Development</span></h2>
-					<object class="underline-squiggle" type="image/svg+xml" data="../assets/lines.svg"></object>
+					<object class="underline-squiggle" type="image/svg+xml" data="./assets/lines.svg"></object>
 					<div [innerHTML]="webDesign.content.rendered"></div>
 					<div class="cta">
 						<a href="#">Let's get started</a>
@@ -57,11 +57,11 @@
 		</div>
 	
 		<div class="service-individual brand-support" #brandSupportDiv>
-			<img src="../../assets/brand-support.svg" class="icon">
+			<img src="./assets/brand-support.svg" class="icon">
 			<div class="container" *ngIf="brandSupport">
 				<div class="left">
 					<h2>Brand <span>Support</span></h2>
-					<object class="underline-squiggle" type="image/svg+xml" data="../assets/lines.svg"></object>
+					<object class="underline-squiggle" type="image/svg+xml" data="./assets/lines.svg"></object>
 					<div [innerHTML]="brandSupport.content.rendered"></div>
 					<div class="cta">
 						<a href="#">Let's get started</a>

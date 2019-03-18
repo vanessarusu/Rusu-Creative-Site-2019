@@ -62,4 +62,7 @@ section {
 			line-height: 1;
 		}
 	}
+	&:empty {
+		min-height: calc(100vh - 56px);
+	}
 }

@@ -11,7 +11,16 @@ import * as moment from 'moment';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class AppComponent {
+  showDefaultMessage = true; // default state
   title = 'vrusu18';
   token = null;
+
+  toggleDefaultMessage(state: boolean) {
+    this.showDefaultMessage = state;
 }
+
+}
+
+

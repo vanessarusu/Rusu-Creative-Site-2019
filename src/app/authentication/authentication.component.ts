@@ -20,7 +20,7 @@ export class AuthenticationComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   auth() {
-  		this.http.post('http://localhost:8888/2018/bower_components/wordpress/wp-json/jwt-auth/v1/token', {
+  		this.http.post('https://vanessasink.com/wp-json/jwt-auth/v1/token', {
   			username: this.user.login,
   			password: this.user.password
   		}).subscribe((data) => {

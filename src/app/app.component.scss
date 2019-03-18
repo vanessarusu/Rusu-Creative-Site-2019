@@ -1,4 +1,4 @@
-// grid
+@import '../styles.scss';
 
 section.three-columns {
 	> div {
@@ -20,5 +20,18 @@ section.three-columns {
 		border: 20px solid white;
 		pointer-events: none;
 		z-index: 10;
+	}
+}
+#loader {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	p {
+		width: 100%;
+		text-align: center;
+		color: $black;
+		font-weight: bold;
+		font-size: 18px;
 	}
 }

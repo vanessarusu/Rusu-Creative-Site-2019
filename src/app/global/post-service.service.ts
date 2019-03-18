@@ -16,7 +16,7 @@ import { Page } from '../page';
 
 export class PostServiceService {
 	posts: any;
-	private baseUrl : string = 'http://localhost:8888/2018/bower_components/wordpress/wp-json/';
+	private baseUrl : string = 'https://vanessasink.com/wp-json/';
 	private getUrl : string = this.baseUrl+'wp/v2/posts';
 	private getCustomFieldsUrl : string = this.baseUrl+'acf/v3/posts';
 	private getAuthorUrl: string = this.baseUrl+'wp/v2/users';
