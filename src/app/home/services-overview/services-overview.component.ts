@@ -1,4 +1,5 @@
-import { Component, HostListener, ElementRef, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { WINDOW } from '@ng-toolkit/universal';
+import { Component, HostListener, ElementRef, OnInit, AfterViewInit, ChangeDetectorRef , Inject} from '@angular/core';
 import { Headers } from '@angular/http';
 import { PostServiceService } from './../../global/post-service.service'
 import { Observable } from 'rxjs';
@@ -45,13 +46,13 @@ export class ServicesOverviewComponent implements OnInit, AfterViewInit {
 	fadeIn: boolean = false;
   specs: boolean = false;
 
-  constructor(private postService: PostServiceService, public el: ElementRef, private ref: ChangeDetectorRef) { }
+  constructor(@Inject(WINDOW) private window: Window, private postService: PostServiceService, public el: ElementRef, private ref: ChangeDetectorRef) { }
 
 
   @HostListener('window:scroll', ['$event'])
     checkScroll() {
       const componentPosition = this.el.nativeElement.offsetTop;
-      const scrollPosition = window.pageYOffset;
+      const scrollPosition = this.window.pageYOffset;
 
       if (scrollPosition >= componentPosition-400) {
         this.fadeIn = true;

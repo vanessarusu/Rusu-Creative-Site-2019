@@ -35,3 +35,18 @@
 
 	}
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	:host ::ng-deep section {
+		.container {
+			ul {
+				display:flex;
+				flex-wrap: wrap;
+				li {
+					width: 200px;
+				}
+			}
+		}
+	}
+
+}

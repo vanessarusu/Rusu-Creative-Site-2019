@@ -56,3 +56,17 @@ footer {
 		}
 	}
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	footer {
+		display: flex;
+		justify-content: space-between;
+		.footer-logo {
+			a {
+				img {
+					width: 100px;
+				}
+			}
+		}
+	}
+}

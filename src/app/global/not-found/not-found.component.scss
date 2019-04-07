@@ -1,0 +1,41 @@
+@import '../../../styles.scss';
+
+
+section {
+	display: flex;
+	min-height: 100%;
+	@media(max-width: $below-tablet) { min-height: calc(100vh - 160px); }
+	height: 500px;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	div {
+		text-align: center;
+		h2 {
+			font-size: 124px;
+			@media (max-width: $below-tablet) { font-size: 60px; }
+			font-weight: bold;
+		}
+		h3 {
+			font-size: 18px;
+			font-family: $serif-font;
+			font-style: italic;
+			margin: 20px auto 10px;
+		}
+		p {
+			margin: 25px;
+			@media (max-width: $below-tablet) { 
+				margin: 15px;
+			}
+			display: inline-block;
+			a {
+				@include button-primary($orange, $black);
+				padding-left: 10px;
+				padding-right: 10px;
+				@media (max-width: $below-tablet) { 
+					font-size: 14px; 
+				}
+			}
+		}
+	}
+}

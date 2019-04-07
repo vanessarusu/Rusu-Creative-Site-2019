@@ -182,3 +182,24 @@
 		}
 	}
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	:host ::ng-deep section {
+		.work-container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.card {
+			width: 33%;
+			figure {
+				img {
+					width: auto;
+					max-width: 1200px;
+					height: 500px;
+					transform: translateX(-50%);
+					margin-left: 50%;
+				}
+			}
+		}
+	}
+}

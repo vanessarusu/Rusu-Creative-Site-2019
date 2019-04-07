@@ -5,6 +5,7 @@
 @import 'global_sass_modules/variables';
 @import 'global_sass_modules/buttons';
 @import 'global_sass_modules/typography';
+@import 'global_sass_modules/ie-only';
 
 
 
@@ -159,9 +160,20 @@ li {
 	@media (max-width: $below-tablet) { width: 90%; }
 	margin: auto;
 	align-self: center;
+	display: block;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 
+	.container {
+		display: flex;
+		max-width: 1200px;
+		width: 80%;
+		@media (max-width: $below-tablet) { width: 90%; }
+		margin: auto;
+		align-self: center;
+	}
+}
 

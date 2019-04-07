@@ -11,12 +11,12 @@
 		@media (max-width: $below-tablet) { padding-bottom: 0; }
 		.services {
 			display: grid;
-			margin: 50px 0;
+			margin: 50px 10px;
 			@media (max-width: $below-tablet) { margin: 0; }
 			grid-template-columns: repeat(6, 1fr);
 			grid-column: 1/-1;
-			column-gap: 150px;
-			@media (max-width: $small-desktop) { column-gap: 50px; }
+			grid-gap: 150px;
+			@media (max-width: $small-desktop) { grid-gap: 50px; }
 			
 			&.show > div { opacity: 1; }
 			&.hide > div { opacity: 0; }
@@ -29,7 +29,7 @@
 					font-size: 20px;
 					@media (max-width: $below-tablet) { font-size: 16px; }
 					line-height: 1.4;
-					padding-bottom: 30px;
+					padding-bottom: 25px;
 					@media (max-width: $below-tablet) { padding-bottom: 10px; }
 					margin-bottom: 20px;
 					@media (max-width: $below-tablet) { margin-bottom: 10px; }
@@ -42,9 +42,10 @@
 					&:after {
 						display: block;
 						position: absolute;
-						height: 3px;
-						width: 30px;
+						height: 1px;
+						width: 20px;
 						background: $orange;
+						background: $black;
 						left: 0;
 						bottom: 0;
 						content: '';
@@ -59,7 +60,7 @@
 					}
 				}
 				p {
-					line-height: 2;
+					line-height: 1.4;
 					@media (max-width: $below-tablet) { line-height: 1.4; }
 				}
 				grid-column: span 2;
@@ -80,7 +81,7 @@
 	}
 
 	p.meta {
-		@include meta($black, 0.2);
+		@include meta($black, 0.6);
 		right: 80px;
 
 	}
@@ -97,8 +98,9 @@
 		@media (max-width: $below-tablet) { grid-column: 1/-1; }
 		@media (max-width: $below-tablet) { text-align: center; }
 		&.title {
-			font-size: 130px;
-			opacity: 0.1;
+			font-size: 50px;
+			font-family: $serif-font;
+			font-style: italic;
 			margin-top: 150px;
 			@media (max-width: $below-tablet) { 
 				font-size: 40px;
@@ -106,11 +108,29 @@
 				margin-top: 50px;
 			}
 		}
+		span.color {
+			color: $orange;
+			font-size: 40px;
+		}
 		
 	}
 }
 
-section:empty {
-	height: 750px;
-	background: red;
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	:host ::ng-deep section {
+		.container {
+			.services {
+				display: flex !important;
+				& > div {
+					h3 {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.container .services.show > div {
+			padding: 0 20px;
+		}
+	}
 }

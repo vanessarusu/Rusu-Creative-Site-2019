@@ -1,3 +1,6 @@
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { CommonModule } from '@angular/common';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routingModule } from './app.routing';
@@ -43,6 +46,7 @@ import { ValuesBlockComponent } from './global/values-block/values-block.compone
 import { SpecificsFlyoutComponent } from './global/specifics-flyout/specifics-flyout.component';
 import { BrandAuditComponent } from './brand-audit/brand-audit.component';
 import { FooterComponent } from './global/footer/footer.component';
+import { NotFoundComponent } from './global/not-found/not-found.component';
 
 
 @NgModule({
@@ -68,9 +72,16 @@ import { FooterComponent } from './global/footer/footer.component';
     SpecificsFlyoutComponent,
     BrandAuditComponent,
     FooterComponent,
+    NotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
+  imports:[
+ CommonModule,
+NgtUniversalModule,
+ 
+ TransferHttpCacheModule,
+HttpClientModule,
+ 
+    
     BrowserAnimationsModule,
     routingModule,
     FormsModule,
@@ -83,11 +94,10 @@ import { FooterComponent } from './global/footer/footer.component';
     })
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }
 
 
 export function WpApiLoaderFactory(http: Http) {
-  return new WpApiStaticLoader(http, 'https://vanessasink.com/wp-json/wp/v2/', '');
+  return new WpApiStaticLoader(http, 'vanessarusu.com/vanessasink/wp/wp-json/wp/v2/', '');
 }

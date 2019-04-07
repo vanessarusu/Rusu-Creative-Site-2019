@@ -30,8 +30,9 @@ section	{
 	}
 	h2 {
 		@include h2();
-		margin-bottom: 50px;
 		margin-top: 20px;
+		margin-bottom: 50px;
+		@media(max-width: $below-tablet) { padding-top: 50px; }
 	}
 
 	label {
@@ -131,7 +132,6 @@ section	{
 				background: url(../../../assets/down-arrow.svg) center center no-repeat;
 				&::after {
 					content: '';
-
 					display: none;
 				}
 			}
@@ -140,7 +140,30 @@ section	{
 }
 #submitted {
 	.container p {
+
 		grid-column: 1/-1;
+		font-size: 24px;
+		font-family: $serif-font;
+		margin: 20px auto 50px;
 		text-align: center;
+		a {
+			@include button-primary($black, $black);
+		}
 	}
 }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	:host ::ng-deep form.container {
+		display: block;
+		input {
+			margin: 10px auto;
+		}
+		.form-group-select {
+			.ng-dropdown-wrapper {
+				input {
+					margin: 5px auto;
+				}
+			}
+		}
+	}
+}
+

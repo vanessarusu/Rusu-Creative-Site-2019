@@ -18,7 +18,7 @@ export class ServicesComponent implements OnInit {
 	overview: Post;
 
   constructor(private postService: PostServiceService, private activatedRoute: ActivatedRoute, private title: Title) {
-  	this.title.setTitle('Services - Vanessa\'s Ink / a creative studio')
+  	this.title.setTitle('[ services ] — vanessa\'s ink — a branding and web development studio for start-ups and small businesses')
   }
 
   scroll(el) {

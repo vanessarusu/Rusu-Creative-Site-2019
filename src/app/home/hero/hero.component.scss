@@ -4,8 +4,13 @@ section {
 	min-height: calc(100vh - 56px);
 	background: #ffd400;
 	background: $hero-background;
-	background-size: cover;
+	background-image: url(/assets/hero-background-cards.png);
+	background-size: contain;
+	@media (max-width: 1400px) { background-size: 118vw; background-position: 50px top; }
+	@media (max-width: 1100px) { background-size: 135vw; background-position: 0px top; }
+	@media (max-width: 900px) { background-size: 167vw; background-position: -249px top; }
 	background-repeat: no-repeat;
+	background-position: right top;
 	position: relative;
 	display: flex;
 	overflow: hidden;
@@ -14,6 +19,10 @@ section {
 		grid-column: 1/-1;
 		@media (max-width: $below-tablet) { grid-column: 2/-1; }
 		align-self: center;
+		.a {
+			margin-top:200px;
+			@media (max-width: $below-tablet) and (orientation: portrait) { margin-top: 300px; }
+		}
 	}
 
 	p {
@@ -39,6 +48,18 @@ section {
 				color: $white;
 			}
 		}
+		&.cta {
+			margin-top: 20px;
+			text-align: left;
+			display: block;
+			a {
+				@include button-primary($black, $black);
+				min-width: 110px;
+				display: inline-block;
+				text-align: center;
+				margin: 15px;
+			}
+		}
 	}
 
 	div.callout {
@@ -53,12 +74,14 @@ section {
 		width: 80%;
 		 color: lighten($hero-background, 40%);
 		opacity: 0.08;
+		// opacity: 0;
 		z-index: 0;
 		display: flex;
 		text-align: left;
 		span {
-			margin: auto;
-			font-size: 14vw;
+
+			margin: 300px 0 auto;
+			font-size: 150px;
 			line-height: 1;
 		}
 	}

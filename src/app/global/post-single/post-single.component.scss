@@ -9,6 +9,7 @@
 :host ::ng-deep #postSingle {
 	min-height: 80vh;
 	padding: 20px;
+	display: block;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-gap: 2rem;

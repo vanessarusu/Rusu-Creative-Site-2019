@@ -1,4 +1,5 @@
-import { Component, OnInit, HostBinding, HostListener } from '@angular/core';
+import { WINDOW } from '@ng-toolkit/universal';
+import { Component, OnInit, HostBinding, HostListener , Inject} from '@angular/core';
 import { PostServiceService } from '../../global/post-service.service'
 import { map } from 'rxjs/operators';
 import { Post } from '../../post';
@@ -36,7 +37,7 @@ export class FeaturedWorkComponent implements OnInit {
 	posts: Post[];
 	width: number;
 
-  constructor(private postService: PostServiceService, private activatedRoute: ActivatedRoute) { }
+  constructor(@Inject(WINDOW) private window: Window, private postService: PostServiceService, private activatedRoute: ActivatedRoute) { }
 
 	@HostListener('window:resize', ['$event'])
 		onResize(event) {
@@ -75,6 +76,6 @@ export class FeaturedWorkComponent implements OnInit {
     }
     
     
-  	this.width = window.innerWidth;
+  	this.width = this.window.innerWidth;
   }
 }

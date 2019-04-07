@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
 	aboutContent:Post;
 
   constructor(private postService: PostServiceService, private activatedRoute: ActivatedRoute, private title:Title) {
-  	this.title.setTitle('About - Vanessa\'s Ink / a creative studio')
+  	this.title.setTitle('[ about ] — vanessa\'s ink — a branding and web development studio for start-ups and small businesses')
   }
 
   ngOnInit() {

@@ -253,3 +253,13 @@
 		}
 	}
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	:host ::ng-deep section#intro {
+		.container {
+			.right {
+				display: none;
+			}
+		}
+	}
+}

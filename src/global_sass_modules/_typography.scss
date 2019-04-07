@@ -1,12 +1,12 @@
 @import './variables';
-@mixin meta($color: white, $opacity: 0.1) {
+@mixin meta($color: white, $opacity: 1) {
 	color: $color;
-	font-size: 14px;
+	font-size: 11px;
 	margin-bottom: 30px;
 	text-transform: uppercase;
 	letter-spacing: 15px;
 	font-family: $sans-serif-font;
-	font-style: italic;
+	// font-style: italic;
 	opacity: $opacity;
 	writing-mode: vertical-rl;
 	position: absolute;

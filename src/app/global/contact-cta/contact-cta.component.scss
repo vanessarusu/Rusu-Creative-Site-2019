@@ -79,3 +79,14 @@ section {
 		}
 	}
 }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	section {
+		div.copy {
+			width: 60%;
+		}
+		div.form-container {
+			width: 35%;
+			margin-left: 2%;
+		}
+	}
+}
