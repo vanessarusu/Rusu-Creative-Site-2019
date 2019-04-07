@@ -52,6 +52,7 @@
 			}
 		}
 		ul {
+			display: block;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 		}
@@ -100,3 +101,10 @@
 			align-items: center;
 		}
 }
+
+//@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+:host ::ng-deep section#flyout {
+	display: none;
+}
+
+//}

@@ -10,7 +10,7 @@ import { Title } from "@angular/platform-browser";
 export class WorkComponent implements OnInit {
 
   constructor(private title:Title) {
-  	this.title.setTitle('Work - Vanessa\'s Ink / a creative studio');
+  	this.title.setTitle('[ work ] — vanessa\'s ink — a branding and web development studio for start-ups and small businesses');
   }
 
   ngOnInit() {

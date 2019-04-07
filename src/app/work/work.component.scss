@@ -2,7 +2,7 @@
 section {
 	p.meta {
 		margin-top: 30px;
-		@include meta($black, 0.2);
+		@include meta($black, 0.5);
 		right: 80px;
 	}
 }
@@ -44,5 +44,14 @@ section {
 	.work-container {
 		grid-template-columns: repeat(2, 1fr);
 		@media(max-width: $tablet) { grid-template-columns: 1fr }
+	}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.container {
+		flex-wrap: wrap;
+		.cta {
+			width: 100%;
+		}
 	}
 }

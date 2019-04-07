@@ -26,6 +26,7 @@ header {
 			}
 		}
 		#contactInfo {
+			@media(max-height: 500px) { display: none; }
 			width: 70%;
 			margin: 80px auto 10px;
 			h4 {
@@ -39,7 +40,9 @@ header {
 				margin: 5px auto;
 			}
 			#aboutCTA {
+				display: block;
 				display: grid;
+				@media(max-height: 650px) { display: none; }
 				grid-template-columns: repeat(12, minmax(30px, 1fr));
 				margin-top: 40px;
 				a {
@@ -75,6 +78,7 @@ header {
 		li {
 			a {
 				padding: 30px;
+				@media(max-width: 1400px) { padding: 30px 20px; }
 				display: block;
 				text-transform: uppercase;
 				letter-spacing: 3px;
@@ -122,7 +126,9 @@ header {
 					}
 					&:hover {
 						&:after {
-							width: 200px;
+							@media(min-width: $small-desktop) {
+								width: 200px;
+							}
 						}
 					}
 				}
@@ -142,22 +148,29 @@ header {
 	width: 175px;
 	height: 100%;
 	justify-content: center;
+	@media(max-width: $small-desktop) {
+		justify-content: flex-start;
+		margin-left: 0;
+	}
 	align-items: center;
+	display: flex;
 	position: absolute;
-	top: 18px;
 	left: 0;
 	cursor: pointer;
+	margin-left: 20px;
 	@media (max-width: $small-desktop) {
-		display: block;
 		background: $white;
 		width: 100%;
 		height: 60px;
 	}
 	img {
 		max-width: 175px;
-		margin-left: 30px;
 		&:focus {
 			outline: none;
+		}
+		@media(max-width: $small-desktop) {
+			margin-left: 20px;
+			max-width: 130px;
 		}
 	}
 

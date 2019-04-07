@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { PostServiceService } from './../post-service.service';
 import { Post } from '../../post';
@@ -26,7 +26,6 @@ export class ProjectSingleComponent implements OnInit {
 
   scroll(el) {
     el.scrollIntoView({behavior: "smooth"});
-    // this.showOverviewScroll = false;
   }
 
   ngOnInit() {

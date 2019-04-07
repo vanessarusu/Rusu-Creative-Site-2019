@@ -49,3 +49,33 @@
 		}
 	}
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	@mixin button-primary($background: blue, $color: $black, $hover: white) {
+		text-transform: lowercase;
+		color: $color;
+		font-size: 18px;
+		position: relative;
+		transition: all 0.1s ease-in;
+		z-index: 0;
+		border: 1px solid $background;
+		padding: 10px;
+
+		@media (min-width: $tablet) {
+			&:hover {
+				color: $hover;
+				background: $background;
+				&:before {
+					height: calc(100% + 4px);
+					pointer-events: none;
+				}
+				&:after {
+					height: 150%;
+					background: rgba($background, 0.05);
+					transform: rotate(8deg);
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}

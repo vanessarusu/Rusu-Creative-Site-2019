@@ -9,7 +9,7 @@ import { Title } from "@angular/platform-browser";
 export class BrandAuditComponent implements OnInit {
 
   constructor(private title:Title) {
-  	this.title.setTitle('Brand Audit Guide - Vanessa\'s Ink / a creative studio')
+  	this.title.setTitle('[ brand audit guide ] — vanessa\'s ink — a branding and web development studio for start-ups and small businesses')
   }
 
   ngOnInit() {

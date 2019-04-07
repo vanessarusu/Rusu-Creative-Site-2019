@@ -6,7 +6,8 @@
 
 	figure {
 		min-height: calc(100vh - 70px);
-		@media (max-width: $small-desktop) { min-height: unset; }
+		height: 0;
+		@media (max-width: $small-desktop) { min-height: unset; height: 100%; }
 		grid-column: span 1;
 		@media (max-width: $small-desktop) { grid-column: span 2; }
 		overflow: hidden;
@@ -35,6 +36,7 @@
 		}
 		div {
 			grid-column: 1/11;
+			@media (max-width: $below-tablet) { grid-column: 1/-1; }
 
 			p:first-of-type {
 				font-weight: bold;
@@ -55,12 +57,13 @@
 	}
 
 	#aboutCTA {
+		display: block;
 		display: grid;
 		grid-template-columns: repeat(12, minmax(30px, 1fr));
 		margin-top: 50px;
 		a {
 			grid-column: span 1;
-			color: #b18e84;
+			color: $coral;
 			i.fab {
 				font-family: "Font Awesome 5 Brands";
 			}
@@ -68,7 +71,7 @@
 				font-family: "Font Awesome 5 Pro";
 			}
 			&.btn {
-				@include button-primary(#658ca5, #658ca5);
+				@include button-primary($coral, $black);
 				text-align: center;
 				grid-column: 9/-1;
 				@media (max-width: $below-tablet) { grid-column: 1/-1 }
@@ -76,6 +79,24 @@
 				max-width: 150px;
 			}
 			
+		}
+	}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	:host ::ng-deep section#about {
+		display: flex;
+		figure {
+			width: 50%;
+		}
+		#aboutContent {
+			display: block !important;
+			width: 45%;
+			margin: 0 auto;
+		}
+		#aboutCTA {
+			display: flex;
+			justify-content: space-between;
 		}
 	}
 }

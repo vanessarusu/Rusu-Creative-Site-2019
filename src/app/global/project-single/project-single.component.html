@@ -1,11 +1,7 @@
 <section *ngIf="currentProject">
 	<div [ngStyle]="{ 'color': bodyFontColor ? bodyFontColor : '', 'background-color': primaryColor ? primaryColor : ''}" class="overview">
-		<figure>
-			<img [src]="currentProject.acf.post_single_hero_image">
-		</figure>
 		<div class="content">
-			<div *ngIf="currentProject && currentProject.acf" class="container" #overviewTarget>
-				<a class="scroll" (click)="scroll(overviewTarget)"><img src="./../assets/scroll-icon.svg"></a>
+			<div *ngIf="currentProject && currentProject.acf" class="container">
 				<div class="titles">
 					<h2>{{ currentProject.title.rendered }}</h2>
 					<h3 [ngStyle]="{ 'color': bodyFontColor ? secondaryColor : '' }">{{ categories }}</h3>
@@ -14,11 +10,17 @@
 					<p class="label">Project Description</p>
 					<p>{{ subtext }}</p>
 					<p class="label" *ngIf="clientWebsite">Client Website</p>
-					<a [href]="clientWebsite" [ngStyle]="{ 'color': linkColor ? linkColor : '' }">{{ clientWebsite }}</a>
+					<a [href]="'//' + clientWebsite" target="blank" [ngStyle]="{ 'color': linkColor ? linkColor : '' }">{{ clientWebsite }}</a>
 				</div>
 				<div class="post-body" [innerHTML]="solutionOverview"></div>
+
+				<a (click)="scroll(overviewTarget)" class="arrow">
+				<object type="image/svg+xml" data="assets/arrow.svg" [attr.data-color]="bodyFontColor ? secondaryColor : ''" #arrow></object></a>
 			</div>
 		</div>
 	</div>
-	<div class="project-shots" [innerHTML]="currentProject.content.rendered"></div>
+	<div class="project-shots">
+			<img [src]="currentProject.acf.post_single_hero_image">
+	</div>
+	<div class="project-shots" [innerHTML]="currentProject.content.rendered" #overviewTarget></div>
 </section>

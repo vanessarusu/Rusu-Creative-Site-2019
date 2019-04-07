@@ -2,6 +2,7 @@
 
 section.three-columns {
 	> div {
+		display: block;
 		display: grid;
 	}
 }
@@ -17,7 +18,10 @@ section.three-columns {
 		right: 0;
 		left: 0;
 		bottom: 0;
-		border: 20px solid white;
+		border-top: 20px solid white;
+		@media(min-width: $tablet) {
+			border: 20px solid white;
+		}
 		pointer-events: none;
 		z-index: 10;
 	}

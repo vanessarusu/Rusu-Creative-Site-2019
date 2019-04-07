@@ -19,30 +19,39 @@ export class FormComponent implements OnInit {
 	submitted = false;
 	intent:Array<string> = ['Brand Refinement','Web Design & Development','Brand Support', 'Consultation', 'Other'];
 
+
 	styleGuide: {
 		caretClass: 'caret',
 		selectBoxClass: 'dropdown-wrapper',
 		selectMenuClass: 'dropdown',
 		optionsClass: 'option' 
 	}
+  formData: FormData = new FormData();
 	form;
   
 
   constructor(private postService: PostServiceService, private title:Title) {
-		this.title.setTitle('Connect - Vanessa\'s Ink / a creative studio');
+		this.title.setTitle('[ connect ] — vanessa\'s ink — a branding and web development studio for start-ups and small businesses');
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.submitted = true; - for testing
+  }
   submitForm() {
   	this.submitted = true;
 
-  	let formData: FormData = new FormData();
-  	formData.append('your-email', this.model.email);
-  	formData.append('your-name', this.model.name);
-  	formData.append('your-message', this.model.message);
-  	formData.append('your-subject', 'Website Form Submission: '+this.model.intent);
-  	this.form = this.postService.getForm(324, formData).subscribe((res) => {
+  	this.formData.append('your-email', this.model.email);
+
+  	this.formData.append('your-name', this.model.name);
+  	this.formData.append('your-message', this.model.message);
+  	this.formData.append('your-subject', 'Website Form Submission: '+this.model.intent);
+
+    // var formEntries = Array.from(this.formData.entries());
+    // console.log("formEntries " , formEntries); 
+
+  	this.form = this.postService.getForm(324, this.formData).subscribe((res) => {
+      console.log(res);
   		return res;
   	});
   }

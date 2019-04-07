@@ -84,6 +84,7 @@
 <section *ngIf="submitted" id="submitted">
 	<div class="container">
 		<p>Thanks, {{model.name}}! We will be in touch soon.</p>
+		<p><a [routerLink]="['/']">back to the homepage</a></p>
 	</div>
 </section>
 <app-contact-cta></app-contact-cta>

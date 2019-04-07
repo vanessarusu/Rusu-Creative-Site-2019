@@ -15,8 +15,8 @@ import { Post } from '../post';
 export class CategoryServiceService {
 
   posts: any;
-	private getUrl : string = 'https://vanessasink.com/wp-json/wp/v2/categories';
-	private getCustomFieldsUrl : string = 'vanessasink.com/wp-json/acf/v3/posts'
+	private getUrl : string = 'https://vanessasink.com/wp/wp-json/wp/v2/categories';
+	private getCustomFieldsUrl : string = 'vanessasink.com/wp/wp-json/acf/v3/posts'
 
   constructor(private wpApiPosts: WpApiPosts, private http: HttpClient) { }
 
