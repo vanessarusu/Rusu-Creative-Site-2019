@@ -38,7 +38,6 @@ export class ProjectSingleComponent implements OnInit {
    this.clientWebsite = this.currentProject.acf.website;
    this.solutionOverview = this.currentProject.acf.solution_overview;
    this.linkColor = this.currentProject.acf.link_color;
-
   }
 
 }

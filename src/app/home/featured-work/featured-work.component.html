@@ -1,13 +1,18 @@
 <section>
+	<h2 style="display: none;">Featured Work</h2>
 	<div class="work-container">
 		<div *ngFor="let post of posts" 
 			class="card" 
 			(mouseenter) ="mouseEnter(post)" 
 			(mouseleave)="mouseLeave(post)"
 			[routerLink]="['/work',post.slug]">
+			<h3 style="display: none;">{{post.title.rendered}}</h3>
 			<figure>
 				<div>
-					<img [src]="post._embedded['wp:featuredmedia']['0'].source_url">
+					<picture>
+						<source type="image/webp" srcset="{{post.link}}.webp">
+						<img src="{{post._embedded['wp:featuredmedia']['0'].source_url}}" alt="{{post._embedded['wp:featuredmedia']['0'].alt_text}}">
+					</picture>
 				</div>
 				<figcaption [@hoverTrigger]="{ value: post.hover, params: {bg: post.primaryColor}}">
 					<div>

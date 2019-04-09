@@ -4,6 +4,7 @@
  		<img src="./assets/vanessas-ink-logo.svg" [routerLink]="['/']">
  	</figure>
  	<nav [ngClass]="mobileMenu ? 'open' : ''">
+ 		<h2 style="display: none;">Main Navigation</h2>
  		<ul id="mainNav">
  			<li><a (click)="toggleMenu()" [routerLink]="['/']">Home</a></li>
 	 		<li><a (click)="toggleMenu()" [routerLink]="['/work']">Work</a></li>

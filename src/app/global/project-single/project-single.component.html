@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div class="project-shots">
-			<img [src]="currentProject.acf.post_single_hero_image">
+			<img [src]="currentProject.acf.post_single_hero_image" alt="{{currentProject.title.rendered}}">
 	</div>
 	<div class="project-shots" [innerHTML]="currentProject.content.rendered" #overviewTarget></div>
 </section>

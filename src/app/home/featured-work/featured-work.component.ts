@@ -54,14 +54,21 @@ export class FeaturedWorkComponent implements OnInit {
 			post.hover = false;
 		}
 	}
+  stripTrailingSlash(str) {
+    return str.endsWith('/') ?
+        str.slice(0, -1) :
+        str;
+  }
 
   ngOnInit() {
     if(this.activatedRoute.snapshot.data.posts) {
 
       this.posts = this.activatedRoute.snapshot.data.posts;
-
+      console.log(this.posts);
       this.posts.map(el => {
         el.primaryColor = el.acf.custom_primary_color;
+        //strip away file name so webp can be added
+        el.link = this.stripTrailingSlash(el._embedded['wp:featuredmedia']['0'].source_url.replace(/\.[^/.]+$/, ""));
         if(el.acf.dark_hover_title === true) {
           el.darkHeader = true;
         }
@@ -74,7 +81,6 @@ export class FeaturedWorkComponent implements OnInit {
           }
       });
     }
-    
     
   	this.width = this.window.innerWidth;
   }

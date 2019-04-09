@@ -13,6 +13,7 @@ export class Post {
 	public lightDescription: boolean;
 	public content: any;
 	public title: any;
+	public link: string;
 	constructor() {
 
 	}
