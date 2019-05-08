@@ -1,0 +1,45 @@
+@import '../../../styles.scss';
+#privacyPolicy {
+	width: 80%;
+	margin: 0 auto;
+	max-width: 600px;
+	div {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	h2 {
+		font-size: 26px;
+		font-family: $serif-font;
+		font-weight: bold;
+		font-style: italic;
+		margin: 20px 0;
+	}
+	h3 {
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: 1px;
+		margin: 25px 0 15px;
+	}
+	p, li {
+		font-size: 12px;
+		line-height: 1.6;
+		font-weight: 100;
+	}
+	li {
+		margin: 10px auto;
+		margin-left: 20px;
+		position: relative;
+		&:before {
+			content: '';
+			width: 4px;
+			height: 4px;
+			background: $black;
+			display: block;
+			position: absolute;
+			left: -18px;
+			top: 5px;
+			border-radius: 50%;
+		}
+	}
+}

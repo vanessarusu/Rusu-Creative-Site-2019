@@ -1,0 +1,46 @@
+@import '../../styles.scss';
+
+:host ::ng-deep section#auditContainer {
+	height: 100%;
+	min-height: calc(100vh - 200px);
+	background: url(../../assets/brand-audit-mockup.jpg) center center no-repeat;
+	background-size: cover;
+	.container {
+		max-width: 700px;
+		background: white;
+		box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.1);
+		.copy {
+			padding: 60px 0 0;
+		}
+		.form-container {
+			padding: 0 0 50px;
+			width: 100%;
+		}
+		.copy, .form-container {
+			grid-column: 1/-1;
+			text-align: center;
+			max-width: 85%;
+			margin: 0 auto;
+			@media (max-width: $below-tablet) { max-width: 85%; }
+			.callout {
+
+			}
+			h5 {
+				@include h2();
+				margin-top: 20px;
+			}
+			.small {
+				margin: 0 auto 50px;
+				max-width: 400px;
+			}
+		}
+		#submitSuccess p {
+			margin-top: 0;
+		}
+
+	}
+	#brandAudit {
+		@media (max-width: $below-tablet) { padding: 120px 0; }
+	}
+
+}

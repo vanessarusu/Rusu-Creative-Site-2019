@@ -47,6 +47,7 @@ import { SpecificsFlyoutComponent } from './global/specifics-flyout/specifics-fl
 import { BrandAuditComponent } from './brand-audit/brand-audit.component';
 import { FooterComponent } from './global/footer/footer.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
+import { PrivacyPolicyComponent } from './global/privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { NotFoundComponent } from './global/not-found/not-found.component';
     BrandAuditComponent,
     FooterComponent,
     NotFoundComponent,
+    PrivacyPolicyComponent,
   ],
   imports:[
  CommonModule,

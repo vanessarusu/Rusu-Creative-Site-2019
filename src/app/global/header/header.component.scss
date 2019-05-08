@@ -4,6 +4,7 @@ header {
 	width: 100%;
 	background: #fff;
 	position: relative;
+	@media (max-width: $small-desktop) { position: fixed; }
 	z-index: 100;
 	nav {
 		@media (max-width: $small-desktop) {

@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-cta.component.scss']
 })
 export class ContactCtaComponent implements OnInit {
+	public showSuccess: boolean = false;
+	public hideForm: boolean = false;
 
   constructor() { }
+  submitToggle() {
+  	 this.showSuccess = true;
+  	 this.hideForm = true;
+  }
 
   ngOnInit() {
   }

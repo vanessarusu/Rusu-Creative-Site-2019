@@ -18,6 +18,7 @@ import { ServicesResolverService } from './services/services-resolver.service';
 import { FormComponent } from './contact/form/form.component';
 import { BrandAuditComponent } from './brand-audit/brand-audit.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
+import { PrivacyPolicyComponent } from './global/privacy-policy/privacy-policy.component';
 
 
 const routes: Routes = [
@@ -25,8 +26,6 @@ const routes: Routes = [
 		path: "",
 		component: HomeComponent,
 		resolve : {
-			feed: InstagramResolverService,
-			posts: WorkResolverService
 		},
 		data: {
 			projectCategoryId: 4
@@ -94,20 +93,24 @@ const routes: Routes = [
 		path: "free-brand-audit-guide",
 		component: BrandAuditComponent,
 	},
+	{
+		path: "privacy-policy",
+		component: PrivacyPolicyComponent
+	},
 	{ 
-		path: '404', 
+		path: "404", 
 		component: NotFoundComponent,
 		resolve : {
 			feed: InstagramResolverService,
 		},
 	},
 	{ 
-		path: '**',
+		path: "**",
 		component: NotFoundComponent,
 		resolve : {
 			feed: InstagramResolverService,
 		}
-	}
+	},
 
 ];
 

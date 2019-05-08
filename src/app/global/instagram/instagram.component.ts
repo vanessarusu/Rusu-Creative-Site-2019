@@ -16,11 +16,19 @@ export class InstagramComponent implements OnInit {
   constructor(private instagramService: InstagramService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.data.forEach(data => {
-      this.feed = data.feed;
-      this.username = '@' + this.feed[0].user.username;
-    });
-  	
+    if(this.route.data) {
+        this.route.data.forEach(data => {
+          if(data.feed) {
+            this.feed = data.feed;
+            this.username = '@' + this.feed[0].user.username;
+          }
+          else {
+            this.instagramService.getFeed(5).subscribe(data => {
+              this.feed = data.data;
+              this.username = '@' + this.feed[0].user.username;
+            });
+          }
+      });
+    }
   }
-
 }

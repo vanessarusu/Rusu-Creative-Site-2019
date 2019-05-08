@@ -10,6 +10,7 @@
 			<li *ngFor="let item of feed">
 				<a [href]="item.link" target="blank">
 					<img [src]="item.images.low_resolution.url">
+					<p class="caption">{{item.caption.text}}</p>
 				</a>
 			</li>
 		</ul>

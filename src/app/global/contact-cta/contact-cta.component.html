@@ -9,7 +9,7 @@
 		<div class="form-container">
 			<!-- Begin Mailchimp Signup Form -->
 			<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-				<div id="mc_embed_signup">
+				<div id="mc_embed_signup" [ngClass]="hideForm ? 'hide' : 'show'">
 					<form
 						ngNoForm 
 						action="https://tumblr.us5.list-manage.com/subscribe/post?u=ac592e064105819e64ac3aced&amp;id=0ee52da4a1"
@@ -43,6 +43,7 @@
 							</div>
 							<div class="clear">
 								<input 
+									(click)="submitToggle()"
 									type="submit" 
 									value="yes please!" 
 									name="subscribe" 
@@ -54,6 +55,12 @@
 				</div>
 			<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 			<!--End mc_embed_signup-->
+			<div id="submitSuccess" [ngClass]="showSuccess ? 'show' : 'hide'">
+				<p>
+					Thank you!<br> Please check your inbox for the download. <br>
+					<span>Have a question? Reach out to hello@vanessasink.com</span>
+				</p>
+			</div>
 		</div>
 	</div>
 </section>

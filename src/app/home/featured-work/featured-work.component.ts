@@ -7,10 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ActivatedRoute } from '@angular/router';
 
-
-
-
-
 @Component({
   selector: 'app-featured-work',
   templateUrl: './featured-work.component.html',
@@ -59,13 +55,8 @@ export class FeaturedWorkComponent implements OnInit {
         str.slice(0, -1) :
         str;
   }
-
-  ngOnInit() {
-    if(this.activatedRoute.snapshot.data.posts) {
-
-      this.posts = this.activatedRoute.snapshot.data.posts;
-      console.log(this.posts);
-      this.posts.map(el => {
+  sortPosts(posts) {
+    posts.map(el => {
         el.primaryColor = el.acf.custom_primary_color;
         //strip away file name so webp can be added
         el.link = this.stripTrailingSlash(el._embedded['wp:featuredmedia']['0'].source_url.replace(/\.[^/.]+$/, ""));
@@ -80,8 +71,19 @@ export class FeaturedWorkComponent implements OnInit {
             el.lightDescription = false;
           }
       });
+  }
+
+  ngOnInit() {
+    if(this.activatedRoute.snapshot.data.posts) {
+      this.posts = this.activatedRoute.snapshot.data.posts;
+      this.sortPosts(this.posts);
     }
-    
+    else {
+      this.postService.getPostsByCategory(4).subscribe((res) => {
+        this.posts = res;
+        this.sortPosts(this.posts);
+      });
+    }
   	this.width = this.window.innerWidth;
   }
 }
