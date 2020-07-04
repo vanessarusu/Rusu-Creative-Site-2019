@@ -3,13 +3,13 @@
 		<ul class="container">
 			<li class="intro">
 				<div>
-					<h5>Hot off the Artboard</h5>
-					<p><a href="#">{{username}}</a></p>
+					<h5>let's get social!</h5>
+					<p><a href="https://instagram.com/vanessas.ink" target="blank">{{username}}</a></p>
 				</div>
 			</li>
 			<li *ngFor="let item of feed">
 				<a [href]="item.link" target="blank">
-					<img [src]="item.images.low_resolution.url">
+					<img [src]="item.images.low_resolution.url" alt="">
 					<p class="caption">{{item.caption.text}}</p>
 				</a>
 			</li>

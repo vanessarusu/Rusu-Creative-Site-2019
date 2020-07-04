@@ -47,11 +47,7 @@ export class FormComponent implements OnInit {
   	this.formData.append('your-message', this.model.message);
   	this.formData.append('your-subject', 'Website Form Submission: '+this.model.intent);
 
-    // var formEntries = Array.from(this.formData.entries());
-    // console.log("formEntries " , formEntries); 
-
   	this.form = this.postService.getForm(324, this.formData).subscribe((res) => {
-      console.log(res);
   		return res;
   	});
   }

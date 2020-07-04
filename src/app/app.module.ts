@@ -48,6 +48,9 @@ import { BrandAuditComponent } from './brand-audit/brand-audit.component';
 import { FooterComponent } from './global/footer/footer.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
 import { PrivacyPolicyComponent } from './global/privacy-policy/privacy-policy.component';
+import { NotificationBarComponent } from './global/notification-bar/notification-bar.component';
+import { NewsComponent } from './news/news.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 @NgModule({
@@ -75,15 +78,15 @@ import { PrivacyPolicyComponent } from './global/privacy-policy/privacy-policy.c
     FooterComponent,
     NotFoundComponent,
     PrivacyPolicyComponent,
+    NotificationBarComponent,
+    NewsComponent,
+    FeedbackComponent
   ],
   imports:[
- CommonModule,
-NgtUniversalModule,
- 
- TransferHttpCacheModule,
-HttpClientModule,
- 
-    
+    CommonModule,
+    NgtUniversalModule,
+    TransferHttpCacheModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     routingModule,
     FormsModule,

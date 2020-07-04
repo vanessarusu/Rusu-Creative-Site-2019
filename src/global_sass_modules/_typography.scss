@@ -6,7 +6,6 @@
 	text-transform: uppercase;
 	letter-spacing: 15px;
 	font-family: $sans-serif-font;
-	// font-style: italic;
 	opacity: $opacity;
 	writing-mode: vertical-rl;
 	position: absolute;
@@ -30,11 +29,13 @@
 }
 
 object.underline-squiggle {
+	display: block;
+	max-height: 8px;
 	max-width: 50px;
+	width: 50px;
 	grid-column: 1/-1;
 	margin-top: 50px;
 	@media (max-width: $tablet) {
 		margin: 50px auto;
 	}
-	opacity: 0.2;
 }

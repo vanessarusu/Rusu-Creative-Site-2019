@@ -1,4 +1,7 @@
 <section *ngIf="currentProject">
+	<div *ngIf="currentProject && currentProject.acf.post_single_hero_image" class="project-shots featured-shot">
+		<img [src]="currentProject.acf.post_single_hero_image" alt="{{currentProject.title.rendered}}">
+	</div>
 	<div [ngStyle]="{ 'color': bodyFontColor ? bodyFontColor : '', 'background-color': primaryColor ? primaryColor : ''}" class="overview">
 		<div class="content">
 			<div *ngIf="currentProject && currentProject.acf" class="container">
@@ -19,8 +22,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="project-shots">
-			<img [src]="currentProject.acf.post_single_hero_image" alt="{{currentProject.title.rendered}}">
-	</div>
 	<div class="project-shots" [innerHTML]="currentProject.content.rendered" #overviewTarget></div>
+</section>
+<section class="portfolio-page-cta" *ngIf="CTAPanel">
+	<h3 [innerHTML]="CTAPanel.acf.heading"></h3>
+	<p>
+		We can help! Whether you are exploring an idea or gearing up for a launch, let's hop on a free consultation call and dive in on your vision.
+	</p>
+	<a [routerLink]="['/connect']">Let's collaborate!</a>
+	<div></div>
 </section>

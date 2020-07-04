@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
-import {Router, NavigationEnd} from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Headers } from '@angular/http';
 import * as moment from 'moment';
@@ -17,10 +17,10 @@ declare let ga: Function;
 
 export class AppComponent implements OnInit {
 	apiHost = 'https://vanessasink.com/wp/wp-json';
-  showDefaultMessage = true; // default state
-  title = 'vanessa\'s ink &mdash; a branding and web development studio for start-ups and small businesses';
-  token = null;
-  headers;
+	showDefaultMessage = true; // default state
+	title = 'vanessa\'s ink &mdash; a branding and web development studio for start-ups and small businesses';
+	token = null;
+	headers;
 
 
 
@@ -50,9 +50,7 @@ export class AppComponent implements OnInit {
 		}
       } )
   	}
-
   }
-
 
   createAuthorizationHeader(headers: Headers) {
     headers.append('Authorization', 'Basic ' +

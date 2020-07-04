@@ -11,6 +11,7 @@
 			<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 				<div id="mc_embed_signup" [ngClass]="hideForm ? 'hide' : 'show'">
 					<form
+						role="form"
 						ngNoForm 
 						action="https://tumblr.us5.list-manage.com/subscribe/post?u=ac592e064105819e64ac3aced&amp;id=0ee52da4a1"
 						method="post" 
@@ -23,6 +24,7 @@
 							<div class="mc-field-group">
 								<label for="mce-EMAIL" style="display:none;">Email Address </label>
 								<input 
+									role="textbox"
 									type="email" 
 									value="" 
 									name="EMAIL" 
@@ -36,6 +38,8 @@
 							</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 							<div style="position: absolute; left: -5000px;" aria-hidden="true">
 								<input 
+									aria-label="MCE"
+									aria-hidden="true"
 									type="text" 
 									name="b_ac592e064105819e64ac3aced_0ee52da4a1" 
 									tabindex="-1" 
@@ -43,6 +47,7 @@
 							</div>
 							<div class="clear">
 								<input 
+									role="button"
 									(click)="submitToggle()"
 									type="submit" 
 									value="yes please!" 

@@ -19,6 +19,9 @@ import { FormComponent } from './contact/form/form.component';
 import { BrandAuditComponent } from './brand-audit/brand-audit.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
 import { PrivacyPolicyComponent } from './global/privacy-policy/privacy-policy.component';
+import { NewsComponent } from './news/news.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+
 
 
 const routes: Routes = [
@@ -88,10 +91,21 @@ const routes: Routes = [
 	{
 		path: "connect",
 		component: FormComponent,
+		resolve: {
+			feed: InstagramResolverService
+		}
 	},
 	{
 		path: "free-brand-audit-guide",
 		component: BrandAuditComponent,
+	},
+	{	
+		path: "news",
+		component: NewsComponent
+	},
+	{
+		path: "feedback",
+		component: FeedbackComponent
 	},
 	{
 		path: "privacy-policy",

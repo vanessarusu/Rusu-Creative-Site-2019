@@ -4,7 +4,7 @@
 	<div class="container" *ngIf="threeKings">
 		<p class="meta">{{ threeKings.acf.supporting_callout }}</p>
 		<h3 class="title">{{ threeKings.title.rendered }}<span class="color"> .</span></h3>
-		<object class="underline-squiggle" type="image/svg+xml" data="./assets/squiggle.svg"></object>
+		<object class="underline-squiggle" type="image/svg+xml" data="./assets/squiggle.svg" alt=""></object>
 
 		<div class="services" [innerHTML]="threeKings.content.rendered" [@enterAnim]="fadeIn" (@enterAnim.done)="animationDone($event)" [ngClass]="fadeIn ? 'show' : 'hide'">
 		</div>

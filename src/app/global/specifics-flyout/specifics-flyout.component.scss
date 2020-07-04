@@ -101,10 +101,3 @@
 			align-items: center;
 		}
 }
-
-//@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-:host ::ng-deep section#flyout {
-	display: none;
-}
-
-//}

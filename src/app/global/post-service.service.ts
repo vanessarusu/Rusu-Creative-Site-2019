@@ -18,6 +18,7 @@ export class PostServiceService {
 	posts: any;
 	private baseUrl : string = 'https://vanessasink.com/wp/wp-json/';
 	private getUrl : string = this.baseUrl+'wp/v2/posts';
+	private mediaUrl : string = this.baseUrl+'wp/v2/media/';
 	private getCustomFieldsUrl : string = this.baseUrl+'acf/v3/posts';
 	private getAuthorUrl: string = this.baseUrl+'wp/v2/users';
 	private getPageUrl : string = this.baseUrl+'wp/v2/pages/';
@@ -33,7 +34,7 @@ export class PostServiceService {
 	}
 
 	getSinglePost(id : number) {
-		return this.http.get<Post[]>(this.getUrl + '/' + id +'?_embed=true');
+		return this.http.get<Post[]>(this.getUrl + '/' + id +'?&_embed=true');
 	}
 	
 	getSinglePostBySlug(slug: string) {
@@ -56,6 +57,9 @@ export class PostServiceService {
 	getForm(id: number, data:any) {
 		const headers = new HttpHeaders();
 		return this.http.post(this.getFormUrl+id+'/feedback', data);
+	}
+	getFeaturedImage(id:number) {
+		return this.http.get(this.mediaUrl+id)
 	}
 }
 

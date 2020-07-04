@@ -1,4 +1,5 @@
-<div id="site">
+<div id="site" role="main">
+	<app-notification-bar></app-notification-bar>
 	<app-header> </app-header>
 	<div id="loader" *ngIf="showDefaultMessage"><p>loading :)</p></div>
 	<router-outlet (activate)="toggleDefaultMessage(false)" (deactivate)="toggleDefaultMessage(true)"></router-outlet>

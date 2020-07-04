@@ -1,9 +1,10 @@
 
- <header>
- 	<figure id="logo">
- 		<img src="./assets/vanessas-ink-logo.svg" [routerLink]="['/']">
+ <header role="banner" aria-labelledby="logo">
+ 	<figure id="logo" role="heading" aria-level="1">
+ 		<h1 style="display: none;">Vanessa's Ink - A Creative Studio based in Vancouver, BC. Dedicated to helping small businesses and startups level up their branding so they can grow their business </h1>
+ 		<img src="./assets/vanessas-ink-logo.svg" [routerLink]="['/']" alt="Vanessa's Ink - Logo">
  	</figure>
- 	<nav [ngClass]="mobileMenu ? 'open' : ''">
+ 	<nav [ngClass]="mobileMenu ? 'open' : ''" role="navigation" aria-labelledby="mainNav">
  		<h2 style="display: none;">Main Navigation</h2>
  		<ul id="mainNav">
  			<li><a (click)="toggleMenu()" [routerLink]="['/']">Home</a></li>
@@ -19,10 +20,10 @@
 	 		<p>e. hello@vanessasink.com</p>
 	 		<p class="subtext">Based in Vancouver, B.C. Working with clients across North America</p>
 	 		<div id="aboutCTA">
-				<a href="https://www.instagram.com/vanessas.ink/" target="blank"><i class="fab fa-instagram"></i></a>
-				<a href="https://dribbble.com/vanessarusu" target="blank"><i class="fab fa-dribbble"></i></a>
+				<a href="https://www.instagram.com/vanessas.ink/" target="blank"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+				<a href="https://dribbble.com/vanessarusu" target="blank"><i aria-hidden="true" class="fab fa-dribbble"></i></a>
 				<a href="https://www.linkedin.com/in/vanessarusu/" target="blank"><i class="fab fa-linkedin-in"></i></a>
-				<a href="mailto:hello@vanessasink.com"><i class="fal fa-envelope"></i></a>
+				<a href="mailto:hello@vanessasink.com"><i aria-hidden="true"class="fal fa-envelope"></i></a>
 				<a [routerLink]="['/connect']" class="btn">Let's work together</a>
 			</div>
  		</aside>

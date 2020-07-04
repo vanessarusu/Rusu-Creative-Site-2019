@@ -1,10 +1,10 @@
 import { WINDOW } from '@ng-toolkit/universal';
-import { Component, OnInit, HostBinding, HostListener , Inject} from '@angular/core';
+import { Component, OnInit, HostBinding, HostListener, ChangeDetectorRef, Inject} from '@angular/core';
 import { PostServiceService } from '../../global/post-service.service'
 import { map } from 'rxjs/operators';
 import { Post } from '../../post';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, state, style, animate, transition, query } from '@angular/animations';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -26,14 +26,26 @@ import { ActivatedRoute } from '@angular/router';
         animate('0.2s')
       ])
     ]),
+
+  trigger(
+      'enterAnimation', [
+        transition(':enter', [
+          style({ opacity: 0}),
+          animate('.4s 600ms ease-in', style('*'))
+        ]),
+      ]
+    ), 
+
   ]
 })
+
+
 
 export class FeaturedWorkComponent implements OnInit {
 	posts: Post[];
 	width: number;
 
-  constructor(@Inject(WINDOW) private window: Window, private postService: PostServiceService, private activatedRoute: ActivatedRoute) { }
+  constructor(@Inject(WINDOW) private window: Window, private postService: PostServiceService, private activatedRoute: ActivatedRoute, private cdr:ChangeDetectorRef) { }
 
 	@HostListener('window:resize', ['$event'])
 		onResize(event) {
@@ -57,9 +69,17 @@ export class FeaturedWorkComponent implements OnInit {
   }
   sortPosts(posts) {
     posts.map(el => {
+      this.postService.getFeaturedImage(el.featured_media).subscribe((res:Post) => {
+        el.imageLink = res.source_url;
+        this.cdr.detectChanges();
+        return el.imageLink = res.source_url;
+        // el.alt = res.alt_text;
+        // el.nativeLink = res.source_url;
+        // el.link = this.stripTrailingSlash(res.source_url.replace(/\.[^/.]+$/, ""));
+      })
         el.primaryColor = el.acf.custom_primary_color;
-        //strip away file name so webp can be added
-        el.link = this.stripTrailingSlash(el._embedded['wp:featuredmedia']['0'].source_url.replace(/\.[^/.]+$/, ""));
+        // strip away file name so webp can be added
+        // el.link = this.stripTrailingSlash(el._embedded['wp:featuredmedia']['0'].source_url.replace(/\.[^/.]+$/, ""));
         if(el.acf.dark_hover_title === true) {
           el.darkHeader = true;
         }

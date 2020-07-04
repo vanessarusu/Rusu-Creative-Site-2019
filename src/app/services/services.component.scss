@@ -1,6 +1,6 @@
 @import '../../styles.scss';
 :host ::ng-deep section#intro {
-	background: $coral;
+	background: $orange;
 	color: $white;
 	p.meta {
 		margin-top: 30px;
@@ -131,6 +131,9 @@
 					max-width: 140px;
 					display: block;
 				}
+			}
+			.underline-squiggle {
+				opacity: 0.2;
 			}
 
 			.container {

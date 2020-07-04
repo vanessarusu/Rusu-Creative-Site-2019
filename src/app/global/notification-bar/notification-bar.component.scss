@@ -1,0 +1,57 @@
+@import '../../../styles.scss';
+
+:host ::ng-deep#notificationBar {
+	background: #017a84;
+	@media (max-width: $small-desktop) { background: rgba(#017a85, 0.95); }
+	position: relative;
+	z-index: 200;
+	@media (max-width: $small-desktop) { 
+		position: fixed; 
+		bottom: 0; 
+		width: 100%; 
+	}
+	p {
+		font-family: $sans-serif-font;
+		color: $white;
+		font-size: 14px;
+		@media (max-width: $small-desktop) { font-size: 12px;}
+		text-align: center;
+		padding: 6px;
+		a {
+			color: $orange;
+			font-size: 16px;
+			@media (max-width: $small-desktop) { margin: -5px 0 5px; }
+			font-weight: thin;
+			font-style: italic;
+			font-family: $serif-font;
+		}
+		p, span, a {
+			display: inline;
+			@media (max-width: $small-desktop) { display: block; }
+		}
+	}
+	.dismiss {
+		width: 15px;
+		height: 15px;
+		position: absolute;
+		right: 29px;
+		top: 7px;
+		@media (max-width: $small-desktop) { top: 12px; }
+		z-index: 200;
+		cursor: pointer;
+		span {
+			display: block;
+			height: 1px;
+			background: #fff;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			&:first-of-type {
+				transform: rotate(45deg);
+			}
+			&:last-of-type {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}

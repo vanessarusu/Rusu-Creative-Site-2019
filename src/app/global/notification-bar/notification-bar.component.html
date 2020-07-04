@@ -1,0 +1,11 @@
+<div id="notificationBar" *ngIf="show">
+	<p *ngIf="copy">
+		<span [innerHTML]="copy.content.rendered"></span>
+		<a [routerLink]="['/news']" [innerHTML]="copy.acf.supporting_callout"></a>	
+	</p>
+
+	<div class="dismiss" (click)="dismiss()">
+		<span></span>
+		<span></span>
+	</div>	
+</div>

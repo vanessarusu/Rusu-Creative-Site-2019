@@ -118,6 +118,13 @@
 			display: inline-block;
 		}
 	}
+	.featured-shot {
+		max-height: 85vh;
+		overflow: hidden;
+		object-fit: cover;
+		margin-bottom: -5px;
+		@media (max-width: $small-desktop) { padding-top: 50px; }
+	}
 }
 
 a.arrow  {
@@ -144,6 +151,28 @@ a.arrow  {
 	100% {bottom: 60px;}
 }
 
+.portfolio-page-cta {
+	background: transparent;
+	text-align: center;
+	padding: 100px 20px;
+	color: $black;
+	h3 {
+		font-size: 30px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	p {
+		max-width: 600px;
+		margin: 0 auto;
+		line-height: 1.4;
+	}
+	a {
+		display: inline-block;
+		margin-top: 50px;
+		@include button-primary($orange);
+		padding: 10px;
+	}
+}
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 

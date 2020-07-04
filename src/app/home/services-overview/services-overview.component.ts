@@ -70,13 +70,11 @@ export class ServicesOverviewComponent implements OnInit, AfterViewInit {
     this.postService.getSinglePost(143)
     .subscribe(data => { this.specificsList = data; });
 	}
-	animationDone($event) {
-    	// console.log('End');
-  	}
-    specsClick() {
-      this.specs = !this.specs;
-    }
+	animationDone($event) {}
 
+  specsClick() {
+    this.specs = !this.specs;
+  }
 
   ngOnInit() {
   	this.getPosts();

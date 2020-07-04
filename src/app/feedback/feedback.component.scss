@@ -1,0 +1,45 @@
+@import '../../styles.scss';
+
+:host ::ng-deep#newsContainer {
+	min-height: calc(100vh - 200px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url('../../assets/flatlay-shadow-small.jpg') center center no-repeat;
+	background-size: cover;
+
+	.container {
+		max-width: 700px;
+		text-align: center;
+		padding: 150px 30px;
+		display: block;
+		.brand-logos {
+			max-width: 300px;
+		}
+		.card {
+			padding: 60px;
+			background: white;
+			box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.1);
+			display: block;
+			background: white;
+			h5 {
+				@include h2();
+				margin-top: 20px;
+				padding-bottom: 50px;
+			}
+			p {
+				margin-bottom: 50px;
+				a {
+					@include button-primary($orange);
+				}
+			}
+		}
+	}
+}
+
+.show {
+	display: block !important;
+}
+.hide {
+	display: none !important;
+}

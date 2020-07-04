@@ -32,6 +32,7 @@
 		transition: all 0.1s ease-in-out;
 		z-index: -11;
 		transition-delay: 0.05s;
+		pointer-events: none;
 	}
 	@media (min-width: $tablet) {
 		&:hover {

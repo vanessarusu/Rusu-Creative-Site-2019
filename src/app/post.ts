@@ -7,6 +7,7 @@ export class Post {
 	public acf: any;
 	public author: any;
 	public _embedded: any;
+	public source_url: any;
 	public primaryColor: string;
 	public secondaryColor: string;
 	public darkHeader: boolean;
